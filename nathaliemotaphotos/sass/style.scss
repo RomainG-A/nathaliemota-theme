@@ -14,8 +14,6 @@ Version: 1.0
 ul {list-style: none;}
 a {all: unset; cursor: pointer;}
 
-
-
 .header {
     display: flex;
     align-items: center;
@@ -30,6 +28,21 @@ a {all: unset; cursor: pointer;}
     }
     &__nav {
         width: 26.5%;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 7px 0;
+    border-top: 1px solid black;
+    &__nav {
+        width: 43%;
+        margin: auto;
+    }
+    li:last-child:hover {
+        pointer-events: none;
     }
 }
 
