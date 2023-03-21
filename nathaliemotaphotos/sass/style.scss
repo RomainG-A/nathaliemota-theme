@@ -38,9 +38,6 @@ a {all: unset; cursor: pointer;}
         width: 622px;
         margin: auto;
     }
-    li:last-child:hover {
-        pointer-events: none;
-    }
 }
 
 .menu {
@@ -52,6 +49,9 @@ a {all: unset; cursor: pointer;}
     li {
         &:hover {
             font-weight: 700;
+        }
+        &:last-child:hover {
+            pointer-events: none;
         }
     } 
 }

@@ -48,9 +48,6 @@ a {
   width: 622px;
   margin: auto;
 }
-.footer li:last-child:hover {
-  pointer-events: none;
-}
 
 .menu {
   display: flex;
@@ -61,4 +58,7 @@ a {
 }
 .menu li:hover {
   font-weight: 700;
+}
+.menu li:last-child:hover {
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
