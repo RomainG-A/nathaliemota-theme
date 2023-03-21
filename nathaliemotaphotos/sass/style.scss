@@ -20,14 +20,14 @@ a {all: unset; cursor: pointer;}
     justify-content: space-between;
     height: 80px;
     padding: 0 10%;
-    &__heading {
-        width: 19%;
+    /* &__heading {
+        width: 216px; */
         img {
-            width: 100%;
+            width: 216px;
         }
-    }
-    &__nav {
-        width: 26.5%;
+    /* } */
+    li {
+        padding-left: 45px;
     }
 }
 

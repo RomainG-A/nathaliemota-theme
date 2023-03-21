@@ -29,15 +29,15 @@ a {
   justify-content: space-between;
   height: 80px;
   padding: 0 10%;
+  /* &__heading {
+      width: 216px; */
+  /* } */
 }
-.header__heading {
-  width: 19%;
+.header img {
+  width: 216px;
 }
-.header__heading img {
-  width: 100%;
-}
-.header__nav {
-  width: 26.5%;
+.header li {
+  padding-left: 45px;
 }
 
 .footer {
