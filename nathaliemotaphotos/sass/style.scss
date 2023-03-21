@@ -20,7 +20,7 @@ a {all: unset; cursor: pointer;}
     justify-content: space-between;
     height: 80px;
     padding: 0 10%;
-    img {
+    &__heading {
         width: 216px;
     }
     li {
@@ -35,29 +35,40 @@ a {all: unset; cursor: pointer;}
     padding: 7px 0;
     border-top: 1px solid black;
     &__nav {
-        width: 622px;
-        margin: auto;
+        justify-content: center;
+        /* width: 622px; */
+        /* margin: auto; */
+        /* .menu {
+            display: flex;
+            justify-content: space-between;
+        } */
+        li:nth-child(2) {
+            padding-left: 86px;
+            padding-right: 86px;
+        }
     }
 }
 
-.menu {
+nav {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     font-family: 'Space Mono', monospace;
     line-height: 24px;
     text-transform: uppercase;
+    .menu {
+        display: flex;
+        /* justify-content: space-between; */
+    }
     li {
         &:hover {
             font-weight: 700;
         }
-        &:last-child:hover {
-            pointer-events: none;
-        }
-    } 
+    }
 }
 
-.modal {
-    display: none;//* Hidden by default */
+.modale {
+    display: none; /* Hidden by default */
+    /* opacity: 0.5; */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 200;

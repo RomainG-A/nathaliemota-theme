@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <main>
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modale">
     <div class="modal-content">
         <span class="close">x</span>
         <p>Some text in the Modal..</p>
