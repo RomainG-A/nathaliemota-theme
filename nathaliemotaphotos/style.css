@@ -46,12 +46,6 @@ a {
 }
 .footer__nav {
   justify-content: center;
-  /* width: 622px; */
-  /* margin: auto; */
-  /* .menu {
-      display: flex;
-      justify-content: space-between;
-  } */
 }
 .footer__nav li:nth-child(2) {
   padding-left: 86px;
@@ -60,17 +54,16 @@ a {
 
 nav {
   display: flex;
-  /* justify-content: space-between; */
   font-family: "Space Mono", monospace;
   line-height: 24px;
   text-transform: uppercase;
 }
 nav .menu {
   display: flex;
-  /* justify-content: space-between; */
 }
 nav li:hover {
   font-weight: 700;
+  cursor: pointer;
 }
 
 .modale {
