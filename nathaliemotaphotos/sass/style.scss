@@ -60,16 +60,17 @@ nav {
 }
 
 .modale {
-    display: none; /* Hidden by default */
-    /* opacity: 0.5; */
-    position: fixed; /* Stay in place */
+    /* display: none; */ /* Hidden by default */
+    /* position: fixed; */ /* Stay in place */
     z-index: 1; /* Sit on top */
-    left: 200;
-    top: 200;
-    width: 250%; /* Full width */
-    height: 25%; /* Full height */
+    /* left: 200;
+    top: 200; */
+    border: 5px solid black;
+    width: 597px;
+    height: 769px;
+    margin: auto;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    color: blue;
+    &__header {
+        padding-top: 8px;
+    }
 }
