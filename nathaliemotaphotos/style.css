@@ -9,6 +9,7 @@ Requires PHP: 8.1.9
 Version: 1.0
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -80,4 +81,22 @@ nav li:hover {
 }
 .modale__header {
   padding-top: 8px;
+}
+.modale form {
+  width: 44%;
+  margin: auto;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+.modale form label {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.modale form input, .modale form textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid black;
+  border-radius: 0;
 }/*# sourceMappingURL=style.css.map */
