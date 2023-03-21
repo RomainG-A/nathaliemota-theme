@@ -8,6 +8,7 @@ Tested up to: 6.1.1
 Requires PHP: 8.1.9
 Version: 1.0
 */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,4 +16,37 @@ Version: 1.0
 
 ul {
   list-style: none;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 10%;
+}
+.header__heading {
+  width: 19%;
+}
+.header__heading img {
+  width: 100%;
+}
+.header__nav {
+  width: 26.5%;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Space Mono", monospace;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.menu li:hover {
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
