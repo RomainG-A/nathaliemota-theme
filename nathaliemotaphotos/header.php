@@ -6,3 +6,6 @@
     <?php wp_head() ?>
 </head>
 <body>
+<header>
+    <?php wp_nav_menu(['theme-location' => 'Primary Menu']); ?>
+</header>
