@@ -69,7 +69,7 @@ nav li:hover {
 .modale {
   /* display: none; */ /* Hidden by default */
   /* position: fixed; */ /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 999; /* Sit on top */
   /* left: 200;
   top: 200; */
   border: 5px solid black;
