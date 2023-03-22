@@ -91,7 +91,13 @@ nav li:hover {
   padding-bottom: 22px;
 }
 .modale__content__header__line {
-  display: flex;
+  display: inline-flex;
+}
+.modale__content__header__line--line1 {
+  animation: textLoop 10s linear infinite;
+}
+.modale__content__header__line--line2 {
+  animation: textLoop 10s -5s linear reverse infinite;
 }
 .modale__content form {
   width: 44%;
@@ -153,6 +159,19 @@ nav li:hover {
   font-size: 12px;
   margin-bottom: -18px;
 }
-.modale__content form .wpcf7-response-output, .modale__content form .wpcf7-spinner {
+.modale__content form .wpcf7-spinner {
   display: none;
+}
+.modale__content form div.wpcf7-response-output {
+  margin: 0.6em 0em 0em;
+  text-align: center;
+}
+
+@keyframes textLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-281px);
+  }
 }/*# sourceMappingURL=style.css.map */

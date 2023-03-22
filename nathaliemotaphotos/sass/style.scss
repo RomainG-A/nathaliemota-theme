@@ -83,7 +83,13 @@ nav {
             padding-top: 8px;
             padding-bottom: 22px;
             &__line {
-                display: flex;
+                display: inline-flex;
+                &--line1 {  
+                    animation: textLoop 10s linear infinite;
+                }
+                &--line2 {  
+                    animation: textLoop 10s  -5s linear reverse infinite;
+                }
             }
         }
     
@@ -149,9 +155,22 @@ nav {
                 font-size: 12px;
                 margin-bottom: -18px;
             }
-            .wpcf7-response-output, .wpcf7-spinner {
+            .wpcf7-spinner {
                 display: none;
             }
+            div.wpcf7-response-output {
+                margin: 0.6em 0em 0em;
+                text-align: center;
+            }
         }
+    }
+}
+
+@keyframes textLoop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-281px);
     }
 }
