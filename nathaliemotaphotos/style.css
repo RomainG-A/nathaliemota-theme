@@ -125,4 +125,8 @@ nav li:hover {
 }
 .modale form .wpcf7-response-output, .modale form .wpcf7-spinner {
   display: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* .darken {
+    filter: brightness(50%);
+} *//*# sourceMappingURL=style.css.map */
