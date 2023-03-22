@@ -39,11 +39,12 @@ a {
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 7px 0;
   border-top: 1px solid black;
+  z-index: -1;
 }
 .footer__nav {
   justify-content: center;
