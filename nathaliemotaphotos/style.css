@@ -93,10 +93,10 @@ nav li:hover {
 .modale__content__header__line {
   display: inline-flex;
 }
-.modale__content__header__line--line1 {
+.modale__content__header__line:first-child {
   animation: textLoop 10s linear infinite;
 }
-.modale__content__header__line--line2 {
+.modale__content__header__line:last-child {
   animation: textLoop 10s -5s linear reverse infinite;
 }
 .modale__content form {

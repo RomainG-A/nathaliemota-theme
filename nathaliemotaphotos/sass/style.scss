@@ -84,10 +84,10 @@ nav {
             padding-bottom: 22px;
             &__line {
                 display: inline-flex;
-                &--line1 {  
+                &:first-child {  
                     animation: textLoop 10s linear infinite;
                 }
-                &--line2 {  
+                &:last-child {  
                     animation: textLoop 10s  -5s linear reverse infinite;
                 }
             }
