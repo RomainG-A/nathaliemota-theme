@@ -13,5 +13,11 @@ $('.btn-modale').click(function() {
         modaleOuverte = false; 
     }
 });
+$('main').click(function() {
+    if (modaleOuverte) {
+        $('.modale').css('display', 'none');
+    modaleOuverte = false;
+    }
+});
 
 })(jQuery);
