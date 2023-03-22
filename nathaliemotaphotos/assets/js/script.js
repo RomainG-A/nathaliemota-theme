@@ -15,7 +15,7 @@
     modal.style.display = "block";
 } */
 $('.btn-modale').click(function() {
-    $('.modale').css('display', 'flex');
+    $('.modale').css('display', 'block');
     /* $('.modale').css({
         'opacity': '1'
     }); */

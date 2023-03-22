@@ -68,35 +68,61 @@ nav li:hover {
 }
 
 .modale {
-  /* display: none; */ /* Hidden by default */
-  /* position: fixed; */ /* Stay in place */
-  z-index: 999; /* Sit on top */
-  /* left: 200;
-  top: 200; */
+  /* display: none; */
+  /* position: fixed; */
+  z-index: 999;
   border: 5px solid black;
   width: 597px;
   height: 769px;
   margin: auto;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: hidden;
 }
 .modale__header {
   padding-top: 8px;
+  padding-bottom: 22px;
+}
+.modale__header__line {
+  display: flex;
 }
 .modale form {
   width: 44%;
   margin: auto;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
+}
+.modale form p {
+  margin-top: 24px;
 }
 .modale form label {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
 }
+.modale form input {
+  height: 40px;
+}
 .modale form input, .modale form textarea {
-  width: 100%;
+  padding: 0 2%;
+  width: 96%;
   resize: none;
   border: 1px solid black;
   border-radius: 0;
+}
+.modale form .wpcf7-submit {
+  width: 81%;
+  height: 38px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 37px;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+.modale form .wpcf7-not-valid-tip {
+  font-size: 12px;
+  margin-bottom: -18px;
+}
+.modale form .wpcf7-response-output, .modale form .wpcf7-spinner {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
