@@ -123,9 +123,28 @@ nav {
                 font-size: 14px;
                 letter-spacing: 0.1em;
                 background-color: white;
-                border: 1px solid black;
+                border: none;
                 cursor: pointer;
+
+                /* ***** Animation bouton d'envoi ***** */
+                background: linear-gradient(90deg, black 50%, white 50%);
+                &:after{
+                    background: white;
+                    content: "";
+                    position: absolute;
+                }
+                &, .wpcf7-submit:after {
+                    background-position: 98.5%;
+                    background-size: 200% 200%;
+                    transition: all 500ms ease-in-out;
+                }
+                &:hover, .wpcf7-submit:hover:after {
+                    background-position: 0;
+                    color: white;
+                }
+
             }
+
             .wpcf7-not-valid-tip {
                 font-size: 12px;
                 margin-bottom: -18px;

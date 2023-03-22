@@ -130,8 +130,24 @@ nav li:hover {
   font-size: 14px;
   letter-spacing: 0.1em;
   background-color: white;
-  border: 1px solid black;
+  border: none;
   cursor: pointer;
+  /* ***** Animation bouton d'envoi ***** */
+  background: linear-gradient(90deg, black 50%, white 50%);
+}
+.modale__content form .wpcf7-submit:after {
+  background: white;
+  content: "";
+  position: absolute;
+}
+.modale__content form .wpcf7-submit, .modale__content form .wpcf7-submit .wpcf7-submit:after {
+  background-position: 98.5%;
+  background-size: 200% 200%;
+  transition: all 500ms ease-in-out;
+}
+.modale__content form .wpcf7-submit:hover, .modale__content form .wpcf7-submit .wpcf7-submit:hover:after {
+  background-position: 0;
+  color: white;
 }
 .modale__content form .wpcf7-not-valid-tip {
   font-size: 12px;

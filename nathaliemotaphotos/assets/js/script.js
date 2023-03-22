@@ -26,6 +26,4 @@ function affichageModale(opacity) {
     }, transitionModale);
 }
 
-// $('.wpcf7-submit').before("<span class='bouton-hover'></span>");
-
 })(jQuery);
