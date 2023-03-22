@@ -1,5 +1,8 @@
 <div class="modale">
     <div class="modale__content">
+        <button class="modale__content__close btn-close" type="button">
+            X
+        </button>
         <div class="modale__content__header">
             <div class="modale__content__header__line">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact-texte.png" alt="Contact" />
