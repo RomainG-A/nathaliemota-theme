@@ -13,7 +13,7 @@ $('.btn-modale').click(function() {
         modaleOuverte = false; 
     }
 });
-$('main').click(function() {
+$('main, footer').click(function() {
     if (modaleOuverte) {
         $('.modale').css('display', 'none');
     modaleOuverte = false;
