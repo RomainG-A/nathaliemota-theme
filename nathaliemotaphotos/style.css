@@ -68,12 +68,12 @@ nav li:hover {
 }
 
 .modale {
-  /* display: none; */
+  display: none;
   /* position: fixed; */
   z-index: 999;
   border: 5px solid black;
   width: 597px;
-  height: 769px;
+  height: 759px;
   margin: auto;
   overflow: hidden;
 }
@@ -116,7 +116,7 @@ nav li:hover {
   font-size: 14px;
   letter-spacing: 0.1em;
   background-color: white;
-  border: none;
+  border: 1px black solid;
   cursor: pointer;
 }
 .modale form .wpcf7-not-valid-tip {
