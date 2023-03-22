@@ -61,20 +61,20 @@ nav {
 }
 
 .modale {
-    display: none;
-    opacity: 0;
+    /* display: none;
+    opacity: 0; */
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* overflow: auto; */
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
 
     &__content {
         width: 597px;
         height: 759px;
-        margin: 1% auto;
+        margin: 2% auto;
         border: 5px solid black;
         overflow: hidden;
         background-color: white;
@@ -90,23 +90,28 @@ nav {
         form {
             width: 44%;
             margin: auto;
+            font-family: 'Poppins', sans-serif;
             p {
                 margin-top: 24px;
             }
             label {
-                font-family: 'Poppins', sans-serif;
                 text-transform: uppercase;
                 font-size: 14px;
             }
             input {
                 height: 40px;
+                padding: 0 2%;
+            }
+            textarea {
+                padding: 2%;
+                height: 132px;
             }
             input, textarea {
-                padding: 0 2%;
                 width: 96%;
                 resize: none;
                 border: 1px solid black;
                 border-radius: 0;
+                font-family: 'Poppins', sans-serif;
             }
             .wpcf7-submit {
                 width: 81%;
@@ -120,7 +125,6 @@ nav {
                 background-color: white;
                 border: 1px solid black;
                 cursor: pointer;
-    
             }
             .wpcf7-not-valid-tip {
                 font-size: 12px;
