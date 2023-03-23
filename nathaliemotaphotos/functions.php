@@ -19,3 +19,5 @@ function theme_scripts() {
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '', true);
 }
 add_action('wp_footer', 'theme_scripts');
+
+add_theme_support( 'post-thumbnails' );
