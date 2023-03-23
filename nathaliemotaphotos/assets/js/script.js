@@ -4,13 +4,13 @@
 
 
 var dureeTransitionModale = 500;
+var modale = document.getElementById('modale-container');
+var btnFermetureModale = document.getElementById('close-modale');
 
 $('.btn-modale').click(function() {
     $('.modale').css('display', 'block');
     transitionModale(1);
 });
-var modale = document.getElementById('modale-container');
-var btnFermetureModale = document.getElementById('close-modale');
 btnFermetureModale.onclick = function() {
     fermetureModale();
 }
