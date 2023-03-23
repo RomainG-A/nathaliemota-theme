@@ -44,10 +44,11 @@ a {
   width: 100%;
   padding: 7px 0;
   border-top: 1px solid black;
-  z-index: -1;
+  z-index: 0;
 }
 .footer__nav {
   justify-content: center;
+  /* z-index: 0; */
 }
 .footer__nav li:nth-child(2) {
   padding-left: 86px;
@@ -78,6 +79,7 @@ nav li:hover {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
 .modale__content {
   width: 597px;
