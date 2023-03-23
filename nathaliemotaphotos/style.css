@@ -104,6 +104,7 @@ nav li:hover {
 }
 .modale__content__close:hover {
   background-color: #ff3535;
+  transition: all 200ms;
 }
 .modale__content__header {
   padding-top: 8px;
@@ -111,6 +112,10 @@ nav li:hover {
 }
 .modale__content__header__line {
   display: inline-flex;
+}
+.modale__content__header__line img {
+  width: 281px;
+  height: 49px;
 }
 .modale__content__header__line:first-child {
   animation: textLoop 10s linear infinite;

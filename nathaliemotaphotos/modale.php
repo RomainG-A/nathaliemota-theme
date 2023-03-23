@@ -1,6 +1,6 @@
-<div class="modale">
+<div class="modale" id="modale-container">
     <div class="modale__content">
-        <button class="modale__content__close btn-close" type="button">
+        <button class="modale__content__close btn-close" id="close-modale" type="button">
             X
         </button>
         <div class="modale__content__header">

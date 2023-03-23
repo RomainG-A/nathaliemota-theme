@@ -2,36 +2,36 @@
 'use strict';
 
 
-var transitionModale = 500;
-//var modaleOuverte = false;
+
+var dureeTransitionModale = 500;
 
 $('.btn-modale').click(function() {
     $('.modale').css('display', 'block');
-    affichageModale(1);
-    //modaleOuverte = true;
+    transitionModale(1);
 });
-$('.btn-close').on('click', function(e) {
-    affichageModale(0);
+var modale = document.getElementById('modale-container');
+var btnFermetureModale = document.getElementById('close-modale');
+btnFermetureModale.onclick = function() {
+    fermetureModale();
+}
+window.onclick = function(event) {
+    if (event.target == modale) {
+        fermetureModale();
+    }
+}
+
+function fermetureModale() {
+    transitionModale(0);
     setTimeout(function() {
         $('.modale').css('display', 'none');
-    }, transitionModale);
-    //modaleOuverte = false;
-    
-});
-/* $('.modale').on('click', function(e) {
-    if (e.target != $('.modale__content') && modaleOuverte) {
-        affichageModale(0);
-        setTimeout(function() {
-            $('.modale').css('display', 'none');
-        }, transitionModale);
-        modaleOuverte = false;
-    }
-}); */
-
-function affichageModale(opacity) {
+    }, dureeTransitionModale);
+}
+function transitionModale(opacity) {
     $('.modale').animate({
         opacity: opacity
-    }, transitionModale);
+    }, dureeTransitionModale);
 }
+
+
 
 })(jQuery);
