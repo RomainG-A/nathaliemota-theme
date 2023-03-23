@@ -24,5 +24,4 @@
 <h1>TEEEEEEEEST</h1>
 <h1>TEEEEEEEEST</h1>
 
-</main>
 <?php get_footer() ?>

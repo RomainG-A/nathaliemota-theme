@@ -192,6 +192,15 @@ nav li:hover {
   font-size: 14px;
 }
 
+.bloc-photo {
+  width: 100%;
+  display: flex;
+}
+.bloc-photo__description, .bloc-photo__image {
+  width: 40%;
+  padding: 0 10%;
+}
+
 @keyframes textLoop {
   from {
     transform: translateX(0);

@@ -1,4 +1,6 @@
 
+</main>
+
 <?php get_template_part('modale'); ?>
 
 <footer class="footer">

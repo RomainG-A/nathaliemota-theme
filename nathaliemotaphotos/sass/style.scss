@@ -192,6 +192,16 @@ nav {
     }
 }
 
+.bloc-photo {
+    width: 100%;
+    display: flex;
+    &__description, &__image {
+        width: 40%;
+        
+    padding: 0 10%;
+    }
+}
+
 @keyframes textLoop {
     from {
         transform: translateX(0);
