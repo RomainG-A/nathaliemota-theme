@@ -32,6 +32,7 @@ function transitionModale(opacity) {
     }, dureeTransitionModale);
 }
 
+$('.wpcf7-submit').addClass('bouton');
 
 
 })(jQuery);

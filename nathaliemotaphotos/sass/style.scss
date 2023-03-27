@@ -146,37 +146,12 @@ nav {
                 border-radius: 0;
                 font-family: $police-secondaire;
             }
-            .wpcf7-submit {
+            .bouton {
                 width: 81%;
-                height: 38px;
                 display: block;
                 margin: 0 auto;
                 margin-top: 37px;
-                font-family: $police-principale;
-                font-size: 14px;
-                letter-spacing: 0.1em;
-                background-color: white;
                 border: none;
-                cursor: pointer;
-
-                /* ***** Animation bouton d'envoi ***** */
-                background: linear-gradient(90deg, black 50%, white 50%);
-                &:after{
-                    background: white;
-                    content: "";
-                    position: absolute;
-                }
-                &, .wpcf7-submit:after {
-                    background-position: 98.5%;
-                    background-size: 200% 200%;
-                    transition: all 500ms ease-in-out;
-                }
-                &:hover, .wpcf7-submit:hover:after {
-                    background-position: 0;
-                    color: white;
-                    font-weight: 700;
-                }
-
             }
 
             .wpcf7-not-valid-tip {
@@ -195,9 +170,11 @@ nav {
     }
 }
 
-.bloc-photo {
+.page-photo {
     width: 80%;
     padding: 0 10%;
+}
+.bloc-photo {
     margin-top: 38px;
     display: flex;
     justify-content: space-between;
@@ -228,6 +205,43 @@ nav {
         letter-spacing: 0.1em;
         text-transform: uppercase;
         padding-bottom: 9px;
+    }
+}
+.contact-photo {
+    display: flex;
+    margin: 40px 0;
+    p {
+        font-family: $police-secondaire;
+        font-weight: 300;
+        font-size: 14px;
+    }
+}
+
+.bouton {
+    height: 38px;
+    font-family: $police-principale;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+
+    /* ***** Animation bouton d'envoi ***** */
+    background: linear-gradient(90deg, black 50%, white 50%);
+    &:after{
+        background: white;
+        content: "";
+        position: absolute;
+    }
+    &, .bouton:after {
+        background-position: 98.5%;
+        background-size: 200% 200%;
+        transition: all 500ms ease-in-out;
+    }
+    &:hover, .bouton:hover:after {
+        background-position: 0;
+        color: white;
+        font-weight: 700;
     }
 }
 

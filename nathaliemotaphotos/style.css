@@ -150,35 +150,12 @@ nav li:hover {
   border-radius: 0;
   font-family: "Poppins", sans-serif;
 }
-.modale__content form .wpcf7-submit {
+.modale__content form .bouton {
   width: 81%;
-  height: 38px;
   display: block;
   margin: 0 auto;
   margin-top: 37px;
-  font-family: "Space Mono", monospace;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  background-color: white;
   border: none;
-  cursor: pointer;
-  /* ***** Animation bouton d'envoi ***** */
-  background: linear-gradient(90deg, black 50%, white 50%);
-}
-.modale__content form .wpcf7-submit:after {
-  background: white;
-  content: "";
-  position: absolute;
-}
-.modale__content form .wpcf7-submit, .modale__content form .wpcf7-submit .wpcf7-submit:after {
-  background-position: 98.5%;
-  background-size: 200% 200%;
-  transition: all 500ms ease-in-out;
-}
-.modale__content form .wpcf7-submit:hover, .modale__content form .wpcf7-submit .wpcf7-submit:hover:after {
-  background-position: 0;
-  color: white;
-  font-weight: 700;
 }
 .modale__content form .wpcf7-not-valid-tip {
   font-size: 12px;
@@ -193,9 +170,12 @@ nav li:hover {
   font-size: 14px;
 }
 
-.bloc-photo {
+.page-photo {
   width: 80%;
   padding: 0 10%;
+}
+
+.bloc-photo {
   margin-top: 38px;
   display: flex;
   justify-content: space-between;
@@ -228,6 +208,43 @@ nav li:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding-bottom: 9px;
+}
+
+.contact-photo {
+  display: flex;
+  margin: 40px 0;
+}
+.contact-photo p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.bouton {
+  height: 38px;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  /* ***** Animation bouton d'envoi ***** */
+  background: linear-gradient(90deg, black 50%, white 50%);
+}
+.bouton:after {
+  background: white;
+  content: "";
+  position: absolute;
+}
+.bouton, .bouton .bouton:after {
+  background-position: 98.5%;
+  background-size: 200% 200%;
+  transition: all 500ms ease-in-out;
+}
+.bouton:hover, .bouton .bouton:hover:after {
+  background-position: 0;
+  color: white;
+  font-weight: 700;
 }
 
 @keyframes textLoop {
