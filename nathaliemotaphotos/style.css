@@ -51,7 +51,7 @@ a {
 .bouton, .bouton .bouton:after {
   background-position: 98.3%;
   background-size: 200% 200%;
-  transition: all 500ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 .bouton:hover, .bouton .bouton:hover:after {
   background-position: 0;
@@ -250,6 +250,7 @@ nav li:hover {
   display: flex;
   justify-content: space-between;
   height: 118px;
+  border-bottom: 1px solid black;
 }
 .interaction-photo > div {
   display: flex;
@@ -285,4 +286,32 @@ nav li:hover {
 }
 .interaction-photo .fleches img {
   width: 25px;
+}
+
+.recommandations {
+  padding-top: 77px;
+}
+.recommandations h2 {
+  padding-bottom: 40px;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.recommandations__images {
+  display: flex;
+  justify-content: space-between;
+}
+.recommandations img {
+  width: 49%;
+  height: 566px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recommandations__btn {
+  width: 214px;
+  display: block;
+  margin: 71px auto;
 }/*# sourceMappingURL=style.css.map */

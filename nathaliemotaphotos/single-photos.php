@@ -20,13 +20,21 @@
                 <input class="interaction-photo__btn bouton btn-modale" type="button" value="Contact">
             </div>
             <div class="interaction-photo__navigation">
-                <img class="preview" src="<?php the_post_thumbnail_url(); ?>">
+                <img class="preview" src="<?php the_post_thumbnail_url(); ?>" alt="Prévisualisation image">
                 <div class="fleches">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" alt="Flèche pointant vers la gauche" />
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png" alt="Flèche pointant vers la droite" />
                 </div>
-
             </div>
+        </section>
+
+        <section class="recommandations">
+            <h2>Vous aimerez aussi</h2>
+            <div class="recommandations__images">
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
+            </div>
+            <input class="recommandations__btn bouton" type="button" value="Toutes les photos">
         </section>
 
     </div>
