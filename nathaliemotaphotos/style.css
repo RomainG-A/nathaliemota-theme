@@ -24,6 +24,41 @@ a {
   cursor: pointer;
 }
 
+@keyframes textLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-281px);
+  }
+}
+.bouton {
+  height: 38px;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  /* ***** Animation bouton d'envoi ***** */
+  background: linear-gradient(90deg, black 50%, white 50%);
+}
+.bouton:after {
+  background: white;
+  content: "";
+  position: absolute;
+}
+.bouton, .bouton .bouton:after {
+  background-position: 98.5%;
+  background-size: 200% 200%;
+  transition: all 500ms ease-in-out;
+}
+.bouton:hover, .bouton .bouton:hover:after {
+  background-position: 0;
+  color: white;
+  font-weight: 700;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -227,40 +262,4 @@ nav li:hover {
 }
 .contact-photo__btn {
   width: 142px;
-}
-
-.bouton {
-  height: 38px;
-  font-family: "Space Mono", monospace;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  /* ***** Animation bouton d'envoi ***** */
-  background: linear-gradient(90deg, black 50%, white 50%);
-}
-.bouton:after {
-  background: white;
-  content: "";
-  position: absolute;
-}
-.bouton, .bouton .bouton:after {
-  background-position: 98.5%;
-  background-size: 200% 200%;
-  transition: all 500ms ease-in-out;
-}
-.bouton:hover, .bouton .bouton:hover:after {
-  background-position: 0;
-  color: white;
-  font-weight: 700;
-}
-
-@keyframes textLoop {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-281px);
-  }
 }/*# sourceMappingURL=style.css.map */
