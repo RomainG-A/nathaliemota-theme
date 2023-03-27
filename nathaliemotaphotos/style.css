@@ -193,12 +193,37 @@ nav li:hover {
 }
 
 .bloc-photo {
-  width: 100%;
-  display: flex;
-}
-.bloc-photo__description, .bloc-photo__image {
-  width: 40%;
+  width: 80%;
   padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.bloc-photo__description {
+  width: 35%;
+  border-bottom: 1px solid black;
+  margin-top: 50%;
+}
+.bloc-photo__image {
+  width: 49.3%;
+  /* padding: 0 10%; */
+}
+.bloc-photo h1 {
+  font-family: "Space Mono", monospace;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 66px;
+  line-height: 58px;
+  /* or 88% */
+  text-transform: uppercase;
+  margin-left: -1%;
+  padding-bottom: 40px;
+}
+.bloc-photo p {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: 9px;
 }
 
 @keyframes textLoop {
