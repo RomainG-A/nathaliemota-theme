@@ -14,12 +14,17 @@
             <img class="bloc-photo__image" src="<?php the_post_thumbnail_url(); ?>">
         </section>
 
-        <section class="contact-photo">
+        <section class="interaction-photo">
             <div>
                 <p>Cette photo vous intéresse ?</p>
-                <input class="contact-photo__btn bouton btn-modale" type="button" value="Contact">
+                <input class="interaction-photo__btn bouton btn-modale" type="button" value="Contact">
             </div>
-            <div>
+            <div class="interaction-photo__navigation">
+                <img class="preview" src="<?php the_post_thumbnail_url(); ?>">
+                <div class="fleches">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" alt="Flèche pointant vers la gauche" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png" alt="Flèche pointant vers la droite" />
+                </div>
 
             </div>
         </section>

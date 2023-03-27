@@ -49,7 +49,7 @@ a {
   position: absolute;
 }
 .bouton, .bouton .bouton:after {
-  background-position: 98.5%;
+  background-position: 98.3%;
   background-size: 200% 200%;
   transition: all 500ms ease-in-out;
 }
@@ -246,21 +246,43 @@ nav li:hover {
   padding-bottom: 9px;
 }
 
-.contact-photo {
+.interaction-photo {
   display: flex;
+  justify-content: space-between;
   height: 118px;
-  /* margin: 40px 0; */
 }
-.contact-photo div:first-child {
+.interaction-photo > div {
   display: flex;
   align-items: center;
 }
-.contact-photo p {
+.interaction-photo p {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 14px;
   margin-right: 28px;
 }
-.contact-photo__btn {
+.interaction-photo__btn {
   width: 142px;
+}
+.interaction-photo__navigation {
+  width: 108px;
+  display: flex;
+  flex-direction: column;
+}
+.interaction-photo .preview {
+  width: 78px;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto 0 auto auto;
+}
+.interaction-photo .fleches {
+  width: 108px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 99px;
+}
+.interaction-photo .fleches img {
+  width: 25px;
 }/*# sourceMappingURL=style.css.map */

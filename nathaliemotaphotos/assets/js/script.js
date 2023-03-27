@@ -32,13 +32,14 @@ function transitionModale(opacity) {
     }, dureeTransitionModale);
 }
 
-$('.contact-photo__btn').click(function() {
+$('.interaction-photo__btn').click(function() {
     $('#form-reference input').val($('#reference-photo').text());
 });
 
 
 
 $('.wpcf7-submit').addClass('bouton');
+
 
 
 })(jQuery);
