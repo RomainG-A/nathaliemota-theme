@@ -23,10 +23,20 @@ add_action('wp_footer', 'theme_scripts');
 add_theme_support( 'post-thumbnails' );
 
 function afficherTaxonomie($nomTaxonomie) {
-    $terms = wp_get_post_terms( get_the_ID(), $nomTaxonomie);
+    $terms = wp_get_post_terms(get_the_ID(), $nomTaxonomie);
     if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {
             echo $term->name;
         }
+    } else {
+        echo 'Non renseigné';
+    }
+}
+function afficherChamp($nomChamp) {
+    $champ = get_field($nomChamp);
+    if($champ) {
+        echo $champ;
+    } else {
+        echo 'Non renseigné';
     }
 }

@@ -30,6 +30,7 @@ a {
   justify-content: space-between;
   height: 80px;
   padding: 0 10%;
+  box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
 }
 .header__heading {
   width: 216px;
@@ -48,7 +49,6 @@ a {
 }
 .footer__nav {
   justify-content: center;
-  /* z-index: 0; */
 }
 .footer__nav li:nth-child(2) {
   padding-left: 86px;
@@ -196,31 +196,34 @@ nav li:hover {
 .bloc-photo {
   width: 80%;
   padding: 0 10%;
+  margin-top: 38px;
   display: flex;
   justify-content: space-between;
+  font-family: "Space Mono", monospace;
 }
 .bloc-photo__description {
-  width: 35%;
+  width: 49%;
   border-bottom: 1px solid black;
-  margin-top: 50%;
+  align-self: flex-end;
+  padding-bottom: 43px;
 }
 .bloc-photo__image {
-  width: 49.3%;
-  /* padding: 0 10%; */
+  width: 49%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .bloc-photo h1 {
-  font-family: "Space Mono", monospace;
   font-style: italic;
   font-weight: 400;
   font-size: 66px;
-  line-height: 58px;
+  line-height: 65px;
   /* or 88% */
+  width: 70%;
   text-transform: uppercase;
   margin-left: -1%;
   padding-bottom: 40px;
 }
 .bloc-photo p {
-  font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
