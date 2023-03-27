@@ -212,12 +212,21 @@ nav li:hover {
 
 .contact-photo {
   display: flex;
-  margin: 40px 0;
+  height: 118px;
+  /* margin: 40px 0; */
+}
+.contact-photo div:first-child {
+  display: flex;
+  align-items: center;
 }
 .contact-photo p {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 14px;
+  margin-right: 28px;
+}
+.contact-photo__btn {
+  width: 142px;
 }
 
 .bouton {

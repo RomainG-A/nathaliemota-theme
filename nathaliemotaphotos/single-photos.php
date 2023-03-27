@@ -15,8 +15,13 @@
         </section>
 
         <section class="contact-photo">
-            <p>Cette photo vous intéresse ?</p>
-            <input class="btn-contact bouton" type="button" value="Contact">
+            <div>
+                <p>Cette photo vous intéresse ?</p>
+                <input class="contact-photo__btn bouton" type="button" value="Contact">
+            </div>
+            <div>
+
+            </div>
         </section>
 
     </div>

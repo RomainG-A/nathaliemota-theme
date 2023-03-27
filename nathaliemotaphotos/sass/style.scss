@@ -209,11 +209,20 @@ nav {
 }
 .contact-photo {
     display: flex;
-    margin: 40px 0;
+    height: 118px;
+    /* margin: 40px 0; */
+    div:first-child {
+        display: flex;
+        align-items: center;
+    }
     p {
         font-family: $police-secondaire;
         font-weight: 300;
         font-size: 14px;
+        margin-right: 28px;
+    }
+    &__btn {
+        width: 142px;
     }
 }
 
