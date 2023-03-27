@@ -5,7 +5,7 @@
         <section class="bloc-photo">
             <div class="bloc-photo__description">
                 <h1><?php the_title() ?></h1>
-                <p>Référence : <?php afficherChamp('reference_photo') ?></p>
+                <p>Référence : <span id="reference-photo"><?php afficherChamp('reference_photo') ?></span></p>
                 <p>Catégorie : <?php afficherTaxonomie('categories'); ?></p>
                 <p>Format : <?php afficherTaxonomie('format'); ?></p>
                 <p>Type : <?php afficherChamp('type_photo') ?></p>
@@ -17,7 +17,7 @@
         <section class="contact-photo">
             <div>
                 <p>Cette photo vous intéresse ?</p>
-                <input class="contact-photo__btn bouton" type="button" value="Contact">
+                <input class="contact-photo__btn bouton btn-modale" type="button" value="Contact">
             </div>
             <div>
 

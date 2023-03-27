@@ -173,6 +173,7 @@ nav li:hover {
 .modale__content form input {
   height: 40px;
   padding: 0 2%;
+  text-transform: uppercase;
 }
 .modale__content form textarea {
   padding: 2%;
