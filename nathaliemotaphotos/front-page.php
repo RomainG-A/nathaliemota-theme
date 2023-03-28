@@ -2,7 +2,18 @@
 
 <section class="hero">
     <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_title.png" title="Photographe event" alt="Photographe event" /></h1>
-    <img class="hero__background" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_test.jpeg" />
+    <?php 
+        $random_image = new WP_Query(array ('post_type' => 'photos', 'orderby' => 'rand', 'posts_per_page' => '1'));
+        if (have_posts()) {
+            while ($random_image->have_posts()) {
+                $random_image->the_post();
+                echo '<img class="hero__background" src="';
+                echo the_post_thumbnail_url();
+                echo '" />';
+            }
+        }
+    ?> 
+
 </section>
 
 <section class="galerie bloc-page">
