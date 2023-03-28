@@ -10,10 +10,12 @@ Version: 1.0
 
 @import "base/base";
 @import "base/typography";
+@import "base/general";
 @import "base/animations";
 @import "components/buttons";
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/nav";
 @import "layouts/modale";
+@import "pages/home";
 @import "pages/photos";
