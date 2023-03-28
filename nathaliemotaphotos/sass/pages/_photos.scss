@@ -1,21 +1,12 @@
-.page-photo {
-    width: 80%;
-    padding: 0 10%;
-}
-
 .bloc-photo {
     margin-top: 38px;
-    display: flex;
-    justify-content: space-between;
     font-family: $police-principale;
     &__description {
-        width: 49%;
         border-bottom: 1px solid black;
         align-self: flex-end;
         padding-bottom: 43px;
     }
     &__image {
-        width: 49%;
         object-fit: contain;
     }
     h1 {
@@ -23,7 +14,6 @@
         font-weight: 400;
         font-size: 66px;
         line-height: 65px;
-        /* or 88% */
         width: 70%;
         text-transform: uppercase;
         margin-left: -1%;
@@ -38,8 +28,6 @@
 }
 
 .interaction-photo {
-    display: flex;
-    justify-content: space-between;
     height: 118px;
     border-bottom: 1px solid black;
 
@@ -92,12 +80,7 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
     }
-    &__images {
-        display: flex;
-        justify-content: space-between;
-    }
     img {
-        width: 49%;
         height: 566px;
         object-fit: cover;
     }

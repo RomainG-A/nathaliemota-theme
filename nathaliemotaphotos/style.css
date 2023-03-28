@@ -24,6 +24,20 @@ a {
   cursor: pointer;
 }
 
+.bloc-page {
+  width: 80%;
+  padding: 0 10%;
+}
+
+.colonnes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colonne {
+  width: 49%;
+}
+
 @keyframes textLoop {
   from {
     transform: translateX(0);
@@ -229,25 +243,16 @@ nav li:hover {
   width: 100%;
 }
 
-.page-photo {
-  width: 80%;
-  padding: 0 10%;
-}
-
 .bloc-photo {
   margin-top: 38px;
-  display: flex;
-  justify-content: space-between;
   font-family: "Space Mono", monospace;
 }
 .bloc-photo__description {
-  width: 49%;
   border-bottom: 1px solid black;
   align-self: flex-end;
   padding-bottom: 43px;
 }
 .bloc-photo__image {
-  width: 49%;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -256,7 +261,6 @@ nav li:hover {
   font-weight: 400;
   font-size: 66px;
   line-height: 65px;
-  /* or 88% */
   width: 70%;
   text-transform: uppercase;
   margin-left: -1%;
@@ -270,8 +274,6 @@ nav li:hover {
 }
 
 .interaction-photo {
-  display: flex;
-  justify-content: space-between;
   height: 118px;
   border-bottom: 1px solid black;
 }
@@ -323,12 +325,7 @@ nav li:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.recommandations__images {
-  display: flex;
-  justify-content: space-between;
-}
 .recommandations img {
-  width: 49%;
   height: 566px;
   -o-object-fit: cover;
      object-fit: cover;

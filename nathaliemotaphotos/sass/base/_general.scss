@@ -1,3 +1,13 @@
-.bloc_page {
-    
+.bloc-page {
+    width: 80%;
+    padding: 0 10%;
+}
+
+.colonnes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.colonne {
+    width: 49%;
 }
