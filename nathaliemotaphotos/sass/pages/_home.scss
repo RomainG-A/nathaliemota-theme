@@ -1,25 +1,34 @@
 .hero {
-    /* display: flex;
-    justify-content: center; */
-    
     width: 100%;
     height: 966px;
     background-image: url("http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-11-scaled.jpeg");
     background-size: cover;
     h1 {
-        /* display: flex;
-        align-items: center; */
-        
-        width: 1006px;
+        width: 1057px;
         padding-top: 402px;
         margin-left: 153px;
         font-family: $police-principale;
         font-style: italic;
         font-size: 96px;
         text-transform: uppercase;
-        
         img {
             width: 100%;
         }
+    }
+}
+
+.filtres {
+    font-family: $police-secondaire;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.galerie {
+    padding-top: 32px;
+    &__photos {
+        flex-wrap: wrap;
+    }
+    img {
+        padding-bottom: 20px;
     }
 }

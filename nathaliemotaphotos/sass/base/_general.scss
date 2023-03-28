@@ -9,5 +9,11 @@
 }
 
 .colonne {
-    width: 49%;
+    width: 49.2%;
+    max-width: 598px;
+}
+
+.img-medium {
+    height: 526px;
+    object-fit: cover;
 }

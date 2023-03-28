@@ -31,8 +31,8 @@
         <section class="recommandations">
             <h2>Vous aimerez aussi</h2>
             <div class="recommandations__images colonnes">
-                <img class="colonne" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
-                <img class="colonne" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
+                <img class="colonne img-medium" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
+                <img class="colonne img-medium" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
             </div>
             <input class="recommandations__btn bouton" type="button" value="Toutes les photos">
         </section>
