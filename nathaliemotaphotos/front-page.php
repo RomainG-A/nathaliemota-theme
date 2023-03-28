@@ -3,7 +3,17 @@
 <section class="hero">
     <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_title.png" title="Photographe event" alt="Photographe event" /></h1>
     <?php 
-        $random_image = new WP_Query(array ('post_type' => 'photos', 'orderby' => 'rand', 'posts_per_page' => '1'));
+        $random_image = new WP_Query(array (
+            'post_type' => 'photos',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'format',
+                    'field' => 'slug',
+                    'terms' => 'paysage',
+                ),
+            ),
+            'orderby' => 'rand',
+            'posts_per_page' => '1'));
         if (have_posts()) {
             while ($random_image->have_posts()) {
                 $random_image->the_post();
@@ -39,14 +49,25 @@
     </div>
 
     <div class="galerie__photos colonnes">
+        <?php 
+            $galerie = new WP_Query(array ('post_type' => 'photos', 'orderby' => 'rand', 'posts_per_page' => '1'));
+            if (have_posts()) {
+                while ($galerie->have_posts()) {
+                    $galerie->the_post();
+                    echo '<img class="hero__background" src="';
+                    echo the_post_thumbnail_url();
+                    echo '" />';
+                }
+            }
+        ?> 
+        <!-- <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
-        <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
-        <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
+        <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" /> -->
     </div>
     <div class="galerie__btn">
         <input type="button" value="Charger plus">
