@@ -36,6 +36,14 @@
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
         <img class="colonne img-medium" src="http://nathalie-mota.local/wp-content/uploads/2023/03/nathalie-2-scaled.jpeg" />
     </div>
+    <div class="galerie__btn">
+        <input type="button" value="Charger plus">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/camera_icon.png" alt="Icône d'appareil photo" />
+    </div>
+    
+    <!-- <div class="galerie__btn">
+        Charger plus
+    </div> -->
 
 </section>
 

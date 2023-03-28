@@ -14,7 +14,7 @@
         content: "";
         position: absolute;
     }
-    &, .bouton:after {
+    &, &:after {
         background-position: 98.3%;
         background-size: 200% 200%;
         transition: all 350ms ease-in-out;
