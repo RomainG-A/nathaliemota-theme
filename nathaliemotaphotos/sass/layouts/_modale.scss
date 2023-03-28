@@ -9,11 +9,12 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99;
+    align-items: center;
+    justify-content: center;
 
     &__content {
         width: 597px;
         height: 759px;
-        margin: 2% auto;
         border: 5px solid black;
         overflow: hidden;
         background-color: white;

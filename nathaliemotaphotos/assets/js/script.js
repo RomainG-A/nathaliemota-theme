@@ -8,7 +8,7 @@ var modale = document.getElementById('modale-container');
 var btnFermetureModale = document.getElementById('close-modale');
 
 $('.btn-modale').click(function() {
-    $('.modale').css('display', 'block');
+    $('.modale').css('display', 'flex');
     transitionModale(1);
 });
 btnFermetureModale.onclick = function() {
