@@ -2,6 +2,7 @@
 
 <section class="hero">
     <h1><img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_title.png" title="Photographe event" alt="Photographe event" /></h1>
+    <img class="hero__background" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero_test.jpeg" />
 </section>
 
 <section class="galerie bloc-page">
