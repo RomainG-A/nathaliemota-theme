@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
 }
+main {
+    max-width: 1980px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
 ul {
     list-style: none;
 }

@@ -15,6 +15,13 @@ Version: 1.0
   padding: 0;
 }
 
+main {
+  max-width: 1980px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
 ul {
   list-style: none;
 }
@@ -36,7 +43,6 @@ a {
 
 .colonne {
   width: 49.2%;
-  max-width: 598px;
 }
 
 .img-medium {
@@ -234,9 +240,10 @@ nav li:hover {
   background-size: cover;
 }
 .hero h1 {
-  width: 1057px;
+  /* width: 1057px; */
+  width: 70%;
   padding-top: 402px;
-  margin-left: 153px;
+  margin-left: 10%;
   font-family: "Space Mono", monospace;
   font-style: italic;
   font-size: 96px;
