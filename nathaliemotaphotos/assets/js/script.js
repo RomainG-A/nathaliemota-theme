@@ -45,7 +45,7 @@ $('#btn-charger-plus').on('click', function() {
         url: '/wp-admin/admin-ajax.php',
         dataType: 'html',
         data: {
-          action: 'weichie_load_more',
+          action: 'load_more',
           paged: pageActuelle,
         },
         success: function (res) {
@@ -54,7 +54,7 @@ $('#btn-charger-plus').on('click', function() {
     });
 });
 
-
+console.log($('#filtre-format').val());
 
 $('.wpcf7-submit').addClass('bouton');
 

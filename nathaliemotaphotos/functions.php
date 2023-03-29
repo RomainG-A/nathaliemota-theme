@@ -40,26 +40,17 @@ function afficherChamp($nomChamp) {
     }
 }
 function toutesLesTaxonomies($nomTaxonomie) {
-    $args = array('post_type' => 'photos');
-    $getNames = new WP_Query($args);
-    if($getNames->have_posts()) {
-        $titles = array();
-        while($getNames->have_posts()) {
-            $getNames->the_post();
-            $terms = wp_get_post_terms(get_the_ID(), $nomTaxonomie);
-            $title = afficherTaxonomie($nomTaxonomie);
-            if ( !in_array( $title, $titles ) ) {
-                $titles[] = $title;
-                echo "<option>";
-                echo $title;
-                echo "</option>";
-            }
+    if($terms = get_terms(array(
+        'taxonomy' => $nomTaxonomie,
+        'orderby' => 'name'
+    ))) {
+        foreach ( $terms as $term ) {
+            echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
         }
     }
-wp_reset_query();
 }
 
-function weichie_load_more() {
+function load_more() {
     $ajaxposts = new WP_Query(array (
         'post_type' => 'photos',
         'orderby' => 'date',
@@ -79,5 +70,5 @@ function weichie_load_more() {
     }
     exit;
 }
-add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
-add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');
+add_action('wp_ajax_load_more', 'load_more');
+add_action('wp_ajax_nopriv_load_more', 'load_more');

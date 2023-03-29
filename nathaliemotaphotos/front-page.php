@@ -55,8 +55,8 @@
                 <label for="filtre-ordre">Trier par</label>
                 <select id="filtre-ordre" name="ordre">
                     <!-- <option value=""></option> -->
-                    <option value="nouveaux">Nouveautés</option>
-                    <option value="anciens">Les plus anciens</option>
+                    <option value="DESC">Nouveautés</option>
+                    <option value="ASC">Les plus anciens</option>
                 </select>
             </form>
         </div>

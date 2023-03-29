@@ -35,7 +35,7 @@
                 <img class="colonne img-medium" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
             </div>
             <!-- <input class="recommandations__btn bouton" type="button" value="Toutes les photos"> -->
-            <button class="recommandations__btn bouton" onclick="window.location.href='../../';">
+            <button class="recommandations__btn bouton" onclick="window.location.href='<?php echo site_url(); ?>'">
                 Toutes les photos
             </button>
             
