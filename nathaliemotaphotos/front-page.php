@@ -54,7 +54,7 @@
             <form class="filtres__tri__ordre filtre colonne">
                 <label for="filtre-ordre">Trier par</label>
                 <select id="filtre-ordre" name="ordre">
-                    <option value=""></option>
+                    <!-- <option value=""></option> -->
                     <option value="nouveaux">Nouveautés</option>
                     <option value="anciens">Les plus anciens</option>
                 </select>
