@@ -32,20 +32,33 @@
     <div class="filtres colonnes">
 
         <div class="filtres__taxonomie colonnes colonne">
-            <div class="filtres__taxonomie_categories colonne">
-                <p>Catégories</p>
-            </div>
-            <div class="filtres_taxonomie__formats colonne">
-                <p>Formats</p>
-            </div>
+            <form class="filtres__taxonomie_categories filtre colonne">
+                <label for="filtre-categorie">Catégories</label>
+                <select id="filtre-categorie" name="categorie">
+                    <option value=""></option>
+                    <?php toutesLesTaxonomies('categories'); ?>
+                </select>
+            </form>
+            <form class="filtres_taxonomie__formats filtre colonne">
+                <label for="filtre-format">Formats</label>
+                <select id="filtre-format" name="format">
+                    <option value=""></option>
+                    <?php toutesLesTaxonomies('format'); ?>
+                </select>
+            </form>
         </div>
 
         <div class="filtres__tri colonnes colonne">
             <div class="colonne">
             </div>
-            <div class="filtres__tri__ordre colonne">
-                <p>Trier par</p>
-            </div>
+            <form class="filtres__tri__ordre filtre colonne">
+                <label for="filtre-ordre">Trier par</label>
+                <select id="filtre-ordre" name="ordre">
+                    <option value=""></option>
+                    <option value="nouveaux">Nouveautés</option>
+                    <option value="anciens">Les plus anciens</option>
+                </select>
+            </form>
         </div>
     </div>
 
@@ -54,7 +67,7 @@
             $galerie = new WP_Query(array (
                 'post_type' => 'photos',
                 'orderby' => 'date',
-                'order' => 'ASC',
+                'order' => 'DESC',
                 'posts_per_page' => '4',
                 'paged' => 1)
             );

@@ -25,30 +25,48 @@ function afficherTaxonomie($nomTaxonomie) {
     $terms = wp_get_post_terms(get_the_ID(), $nomTaxonomie);
     if (!empty($terms) && !is_wp_error($terms)) {
         foreach ($terms as $term) {
-            echo $term->name;
+            return $term->name;
         }
     } else {
-        echo 'Non renseigné';
+        return 'Non renseigné';
     }
 }
 function afficherChamp($nomChamp) {
     $champ = get_field($nomChamp);
     if($champ) {
-        echo $champ;
+        return $champ;
     } else {
-        echo 'Non renseigné';
+        return 'Non renseigné';
     }
+}
+function toutesLesTaxonomies($nomTaxonomie) {
+    $args = array('post_type' => 'photos');
+    $getNames = new WP_Query($args);
+    if($getNames->have_posts()) {
+        $titles = array();
+        while($getNames->have_posts()) {
+            $getNames->the_post();
+            $terms = wp_get_post_terms(get_the_ID(), $nomTaxonomie);
+            $title = afficherTaxonomie($nomTaxonomie);
+            if ( !in_array( $title, $titles ) ) {
+                $titles[] = $title;
+                echo "<option>";
+                echo $title;
+                echo "</option>";
+            }
+        }
+    }
+wp_reset_query();
 }
 
 function weichie_load_more() {
     $ajaxposts = new WP_Query(array (
         'post_type' => 'photos',
         'orderby' => 'date',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'posts_per_page' => '4',
         'paged' => $_POST['paged'])
     );
-    $response = '';
     if($ajaxposts->have_posts()) {
         while ($ajaxposts->have_posts()) {
             $ajaxposts->the_post();
@@ -57,7 +75,7 @@ function weichie_load_more() {
             echo '" />';
         }
     } else {
-        $response = '';
+        echo '';
     }
     exit;
 }
