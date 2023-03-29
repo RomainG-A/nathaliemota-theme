@@ -15,7 +15,6 @@ function theme_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 function theme_scripts() {
-    //wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.4.slim.min.js', array(), '3.6.4', true);
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '', true);
 }
 add_action('wp_footer', 'theme_scripts');
@@ -40,3 +39,27 @@ function afficherChamp($nomChamp) {
         echo 'Non renseigné';
     }
 }
+
+function weichie_load_more() {
+    $ajaxposts = new WP_Query(array (
+        'post_type' => 'photos',
+        'orderby' => 'date',
+        'order' => 'ASC',
+        'posts_per_page' => '4',
+        'paged' => $_POST['paged'])
+    );
+    $response = '';
+    if($ajaxposts->have_posts()) {
+        while ($ajaxposts->have_posts()) {
+            $ajaxposts->the_post();
+            echo '<img class="colonne img-medium" src="';
+            echo the_post_thumbnail_url();
+            echo '" />';
+        }
+    } else {
+        $response = '';
+    }
+    exit;
+}
+add_action('wp_ajax_weichie_load_more', 'weichie_load_more');
+add_action('wp_ajax_nopriv_weichie_load_more', 'weichie_load_more');

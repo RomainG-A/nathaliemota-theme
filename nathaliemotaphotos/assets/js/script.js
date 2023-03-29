@@ -37,6 +37,24 @@ $('.interaction-photo__btn').click(function() {
 });
 
 
+let pageActuelle = 1;
+$('#btn-charger-plus').on('click', function() {
+    pageActuelle ++;
+    $.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        dataType: 'html',
+        data: {
+          action: 'weichie_load_more',
+          paged: pageActuelle,
+        },
+        success: function (res) {
+          $('.galerie__photos').append(res);
+        }
+    });
+});
+
+
 
 $('.wpcf7-submit').addClass('bouton');
 
