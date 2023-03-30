@@ -21,7 +21,7 @@ add_action('wp_footer', 'theme_scripts');
 
 add_theme_support( 'post-thumbnails' );
 
-function toutesLesTaxonomies($nomTaxonomie) {
+function afficherTaxonomies($nomTaxonomie) {
     if($terms = get_terms(array(
         'taxonomy' => $nomTaxonomie,
         'orderby' => 'name'
@@ -59,10 +59,8 @@ function filter() {
         'tax_query' => array(
 	        array(
 	            'taxonomy' => $_POST['nomTaxonomie'],
-                //'taxonomy' => 'categories',
 	            'field'    => 'slug',
 	            'terms'    => $_POST['slugTaxonomie'],
-                //'terms'    => 'concert',
 	        ),
 	    ),
     ));
@@ -98,13 +96,14 @@ function afficherImages($ajaxposts, $exit) {
             echo '" />';
         }
     }
-    else {
+    /* else {
         echo "Il n'y a pas d'images à charger";
-    }
+    } */
+
+    wp_reset_postdata();
     if ($exit) {
-        wp_reset_postdata();
+        //wp_reset_postdata();
         exit(); 
     }
-    /* wp_reset_postdata();
-    exit(); */
+    /* exit(); */
 }

@@ -36,14 +36,14 @@
                 <label for="select-categorie">Catégories</label>
                 <select id="select-categorie" name="categorie">
                     <option value="" hidden></option>
-                    <?php toutesLesTaxonomies('categories'); ?>
+                    <?php afficherTaxonomies('categories'); ?>
                 </select>
             </form>
             <form id="format" class="js-filter-form filtres_taxonomie__formats filtre colonne">
                 <label for="select-format">Formats</label>
                 <select id="select-format" name="format">
                     <option value="" hidden></option>
-                    <?php toutesLesTaxonomies('format'); ?>
+                    <?php afficherTaxonomies('format'); ?>
                 </select>
             </form>
         </div>

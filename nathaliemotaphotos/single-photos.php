@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/* if (have_posts()) {
+    while (have_posts()) {
+        the_post(); */
+?>
 
     <div class="page-photo bloc-page">
 
@@ -31,8 +35,30 @@
         <section class="recommandations">
             <h2>Vous aimerez aussi</h2>
             <div class="recommandations__images colonnes">
-                <img class="colonne img-medium" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
-                <img class="colonne img-medium" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
+            <?php
+                $categorie = strip_tags(get_the_term_list($post->ID, 'categories'));
+                $random_image = new WP_Query(array (
+                    'post_type' => 'photos',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'categories',
+                            'field' => 'slug',
+                            'terms' => $categorie,
+                        ),
+                    ),
+                    'orderby' => 'rand',
+                    'posts_per_page' => '2'));
+                if ($random_image->have_posts()) {
+                    while ($random_image->have_posts()) {
+                        $random_image->the_post();
+                        echo '<img class="colonne img-medium" src="';
+                        echo the_post_thumbnail_url();
+                        echo '"alt="Image similaire" />';
+                    }
+                }
+                wp_reset_postdata();
+            ?> 
+
             </div>
             <!-- <input class="recommandations__btn bouton" type="button" value="Toutes les photos"> -->
             <button class="recommandations__btn bouton" onclick="window.location.href='<?php echo site_url() ?>'">
@@ -43,4 +69,7 @@
 
     </div>
 
-<?php get_footer(); ?>
+<?php 
+/*     }
+} */
+get_footer(); ?>
