@@ -376,21 +376,22 @@ nav li:hover {
   display: flex;
   flex-direction: column;
 }
-.interaction-photo .preview {
+.interaction-photo__navigation .preview {
   width: 78px;
   height: 50%;
   -o-object-fit: cover;
      object-fit: cover;
   margin: auto 0 auto auto;
+  opacity: 0;
 }
-.interaction-photo .fleches {
+.interaction-photo__navigation .fleches {
   width: 108px;
   display: flex;
   justify-content: space-between;
   position: absolute;
   margin-top: 99px;
 }
-.interaction-photo .fleches img {
+.interaction-photo__navigation .fleches .fleche {
   width: 25px;
 }
 

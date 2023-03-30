@@ -38,7 +38,13 @@ $('.interaction-photo__btn').click(function() {
     $('#form-reference input').val($('#reference-photo').text());
 });
 
-
+$('.fleche').hover(
+    function() {
+        $('.preview').css('opacity', '1');
+    }, function() {
+        $('.preview').css('opacity', '0');
+    }
+);
 
 let pageActuelle = 1;
 $('#btn-charger-plus').on('click', function() {
@@ -56,8 +62,6 @@ $('#btn-charger-plus').on('click', function() {
         }
     });
 });
-
-
 
 $(document).on('change', '.js-filter-form', function(e) {
     e.preventDefault();

@@ -24,11 +24,11 @@
                 <input class="interaction-photo__btn bouton btn-modale" type="button" value="Contact">
             </div>
             <div class="interaction-photo__navigation">
-                <img class="preview" src="<?php the_post_thumbnail_url(); ?>" alt="Prévisualisation image">
                 <div class="fleches">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" alt="Flèche pointant vers la gauche" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png" alt="Flèche pointant vers la droite" />
+                    <img class="fleche" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" alt="Flèche pointant vers la gauche" />
+                    <img class="fleche" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png" alt="Flèche pointant vers la droite" />
                 </div>
+                <img class="preview" src="<?php the_post_thumbnail_url(); ?>" alt="Prévisualisation image">
             </div>
         </section>
 

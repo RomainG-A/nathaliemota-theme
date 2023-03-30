@@ -44,23 +44,26 @@
         width: 108px;
         display: flex;
         flex-direction: column;
-    }
-    .preview {
-        width: 78px;
-        height: 50%;
-        object-fit: cover;
-        margin: auto 0 auto auto;
-    }
-    .fleches {
-        width: 108px;
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        margin-top: 99px;
-    }
-    .fleches img {
-        width: 25px;
-    }
+
+        .preview {
+            width: 78px;
+            height: 50%;
+            object-fit: cover;
+            margin: auto 0 auto auto;
+            opacity: 0;
+        }
+        .fleches {
+            width: 108px;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            margin-top: 99px;
+            
+            .fleche {
+                width: 25px;
+            }
+        }
+    } 
 }
 
 .recommandations {
