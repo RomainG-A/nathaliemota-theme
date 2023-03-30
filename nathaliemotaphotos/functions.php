@@ -21,24 +21,6 @@ add_action('wp_footer', 'theme_scripts');
 
 add_theme_support( 'post-thumbnails' );
 
-function afficherTaxonomie($nomTaxonomie) {
-    $terms = wp_get_post_terms(get_the_ID(), $nomTaxonomie);
-    if (!empty($terms) && !is_wp_error($terms)) {
-        foreach ($terms as $term) {
-            return $term->name;
-        }
-    } else {
-        return 'Non renseigné';
-    }
-}
-function afficherChamp($nomChamp) {
-    $champ = get_field($nomChamp);
-    if($champ) {
-        return $champ;
-    } else {
-        return 'Non renseigné';
-    }
-}
 function toutesLesTaxonomies($nomTaxonomie) {
     if($terms = get_terms(array(
         'taxonomy' => $nomTaxonomie,

@@ -5,10 +5,10 @@
         <section class="bloc-photo colonnes">
             <div class="bloc-photo__description colonne">
                 <h1><?php the_title() ?></h1>
-                <p>Référence : <span id="reference-photo"><?php echo afficherChamp('reference_photo') ?></span></p>
-                <p>Catégorie : <?php echo afficherTaxonomie('categories'); ?></p>
-                <p>Format : <?php echo afficherTaxonomie('format'); ?></p>
-                <p>Type : <?php echo afficherChamp('type_photo') ?></p>
+                <p>Référence : <span id="reference-photo"><?php echo get_field('reference_photo'); ?></span></p>
+                <p>Catégorie : <?php echo strip_tags(get_the_term_list($post->ID, 'categories')); ?></p>
+                <p>Format : <?php echo strip_tags(get_the_term_list($post->ID, 'format')); ?></p>
+                <p>Type : <?php echo get_field('type_photo'); ?></p>
                 <p>Année : <?php echo get_the_date('Y'); ?></p>
             </div>
             <img class="bloc-photo__image colonne" src="<?php the_post_thumbnail_url(); ?>">
