@@ -40,18 +40,9 @@ function load_more() {
         'posts_per_page' => 4,
         'paged' => $_POST['paged'])
     );
-    afficherImages($ajaxposts);
-    /* if($ajaxposts->have_posts()) {
-        while ($ajaxposts->have_posts()) {
-            $ajaxposts->the_post();
-            echo '<img class="colonne img-medium" src="';
-            echo the_post_thumbnail_url();
-            echo '" />';
-        }
-    } else {
-        echo '';
-    } */
-    //exit();
+    afficherImages($ajaxposts, true);
+    /* wp_reset_postdata();
+    exit(); */
 }
 add_action('wp_ajax_load_more', 'load_more');
 add_action('wp_ajax_nopriv_load_more', 'load_more');
@@ -63,7 +54,7 @@ function filter() {
         'post_type' => 'photos',
         'orderby' => 'date',
         'order' => 'DESC',
-        'posts_per_page' => '4',
+        'posts_per_page' => -1,
         'paged' => '1',
         'tax_query' => array(
 	        array(
@@ -75,20 +66,9 @@ function filter() {
 	        ),
 	    ),
     ));
-    afficherImages($ajaxposts);
-    /* if($ajaxposts->have_posts()) {
-        while ($ajaxposts->have_posts()) {
-            $ajaxposts->the_post();
-            echo '<img class="colonne img-medium" src="';
-            echo the_post_thumbnail_url();
-            echo '" />';
-        }
-    }
-    else {
-        echo "Il n'y a pas d'images à charger";
-    } */
-    //wp_reset_postdata();
-    //exit();
+    afficherImages($ajaxposts, true);
+    /* wp_reset_postdata();
+    exit(); */
 }
 add_action('wp_ajax_nopriv_filter', 'filter');
 add_action('wp_ajax_filter', 'filter');
@@ -98,16 +78,18 @@ function order() {
         'post_type' => 'photos',
         'orderby' => 'date',
         'order' => $_POST['orderDirection'],
-        'posts_per_page' => '4',
+        'posts_per_page' => 4,
         'paged' => '1',
     ));
-    afficherImages($ajaxposts);
+    afficherImages($ajaxposts, true);
+    /* wp_reset_postdata();
+    exit(); */
 }
 add_action('wp_ajax_nopriv_order', 'order');
 add_action('wp_ajax_order', 'order');
 
 
-function afficherImages($ajaxposts) {
+function afficherImages($ajaxposts, $exit) {
     if($ajaxposts->have_posts()) {
         while ($ajaxposts->have_posts()) {
             $ajaxposts->the_post();
@@ -119,6 +101,10 @@ function afficherImages($ajaxposts) {
     else {
         echo "Il n'y a pas d'images à charger";
     }
-    wp_reset_postdata();
-    exit();
+    if ($exit) {
+        wp_reset_postdata();
+        exit(); 
+    }
+    /* wp_reset_postdata();
+    exit(); */
 }

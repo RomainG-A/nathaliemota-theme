@@ -39,7 +39,7 @@
                     <?php toutesLesTaxonomies('categories'); ?>
                 </select>
             </form>
-            <form id="format "class="js-filter-form filtres_taxonomie__formats filtre colonne">
+            <form id="format" class="js-filter-form filtres_taxonomie__formats filtre colonne">
                 <label for="select-format">Formats</label>
                 <select id="select-format" name="format">
                     <option value="" hidden></option>
@@ -51,7 +51,7 @@
         <div class="filtres__tri colonnes colonne">
             <div class="colonne">
             </div>
-            <form id="ordre "class="js-ordre-form filtres_taxonomie__formats filtre colonne">
+            <form id="ordre" class="js-ordre-form filtres_taxonomie__formats filtre colonne">
                 <label for="select-ordre">Trier par</label>
                 <select id="select-ordre" name="ordre">
                     <!-- <option value=""></option> -->
@@ -85,14 +85,7 @@
                     ),
                 ),
             )); */
-            if ($galerie->have_posts()) {
-                while ($galerie->have_posts()) {
-                    $galerie->the_post();
-                    echo '<img class="colonne img-medium" src="';
-                    echo the_post_thumbnail_url();
-                    echo '" />';
-                }
-            }
+            afficherImages($galerie, false);
         ?>
     </div>
     <div class="galerie__btn">
