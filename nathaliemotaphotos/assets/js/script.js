@@ -83,6 +83,27 @@ $(document).on('change', '.js-filter-form', function(e) {
     });
 });
 
+$(document).on('change', '.js-ordre-form', function(e) {
+    //e.preventDefault();
+    var ordre = $(this).find('option:selected').val();
+    console.log(ordre);
+    
+    $.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        data: {
+            action: 'order',
+            orderDirection: ordre
+        },
+        success: function(result) {
+            $('.galerie__photos').html(result);
+        },
+        /* error: function(result) {
+            console.warn(result);
+        } */
+    });
+});
+
 
 
 })(jQuery);

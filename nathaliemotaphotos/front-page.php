@@ -51,12 +51,12 @@
         <div class="filtres__tri colonnes colonne">
             <div class="colonne">
             </div>
-            <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filtre-ordre" class="filtres__tri__ordre filtre colonne">
+            <form id="ordre "class="js-ordre-form filtres_taxonomie__formats filtre colonne">
                 <label for="select-ordre">Trier par</label>
                 <select id="select-ordre" name="ordre">
                     <!-- <option value=""></option> -->
-                    <option value="DESC">Nouveautés</option>
-                    <option value="ASC">Les plus anciens</option>
+                    <option class="js-ordre-item" value="DESC">Nouveautés</option>
+                    <option class="js-ordre-item" value="ASC">Les plus anciens</option>
                 </select>
             </form>
         </div>

@@ -58,8 +58,6 @@ add_action('wp_ajax_nopriv_load_more', 'load_more');
 
 
 
-
-
 function filter() {
     $ajaxposts = new WP_Query(array(
         'post_type' => 'photos',
@@ -95,6 +93,20 @@ function filter() {
 add_action('wp_ajax_nopriv_filter', 'filter');
 add_action('wp_ajax_filter', 'filter');
 
+function order() {
+    $ajaxposts = new WP_Query(array(
+        'post_type' => 'photos',
+        'orderby' => 'date',
+        'order' => $_POST['orderDirection'],
+        'posts_per_page' => '4',
+        'paged' => '1',
+    ));
+    afficherImages($ajaxposts);
+}
+add_action('wp_ajax_nopriv_order', 'order');
+add_action('wp_ajax_order', 'order');
+
+
 function afficherImages($ajaxposts) {
     if($ajaxposts->have_posts()) {
         while ($ajaxposts->have_posts()) {
@@ -107,6 +119,6 @@ function afficherImages($ajaxposts) {
     else {
         echo "Il n'y a pas d'images à charger";
     }
-    //wp_reset_postdata();
+    wp_reset_postdata();
     exit();
 }
