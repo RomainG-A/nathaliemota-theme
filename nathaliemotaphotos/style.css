@@ -368,12 +368,6 @@ nav li:hover {
   display: flex;
   align-items: center;
 }
-.interaction-photo p {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  margin-right: 28px;
-}
 .interaction-photo__btn {
   width: 142px;
 }
@@ -416,4 +410,11 @@ nav li:hover {
   width: 214px;
   display: block;
   margin: 71px auto;
+}
+
+.interaction-photo p, .recommandations p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  margin-right: 28px;
 }/*# sourceMappingURL=style.css.map */

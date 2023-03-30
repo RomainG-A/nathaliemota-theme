@@ -48,13 +48,18 @@
                     ),
                     'orderby' => 'rand',
                     'posts_per_page' => '2'));
-                if ($random_image->have_posts()) {
+
+                $nombreImagesSimilaires = $random_image->post_count;
+                if ($random_image->have_posts() && $nombreImagesSimilaires > 1) {
                     while ($random_image->have_posts()) {
                         $random_image->the_post();
                         echo '<img class="colonne img-medium" src="';
                         echo the_post_thumbnail_url();
                         echo '"alt="Image similaire" />';
                     }
+                }
+                else {
+                    echo '<p>Il n\'y a pas encore d\'autres photos à afficher dans cette catégorie.</p>';
                 }
                 wp_reset_postdata();
             ?> 

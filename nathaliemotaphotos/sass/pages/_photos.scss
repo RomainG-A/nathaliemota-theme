@@ -36,12 +36,6 @@
         align-items: center;
     }
 
-    p {
-        font-family: $police-secondaire;
-        font-weight: 300;
-        font-size: 14px;
-        margin-right: 28px;
-    }
     &__btn {
         width: 142px;
     }
@@ -84,5 +78,15 @@
         width: 214px;
         display: block;
         margin: 71px auto;
+    }
+}
+
+.interaction-photo, .recommandations {
+    p {
+
+        font-family: $police-secondaire;
+        font-weight: 300;
+        font-size: 14px;
+        margin-right: 28px;
     }
 }
