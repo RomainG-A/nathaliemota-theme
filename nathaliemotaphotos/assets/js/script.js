@@ -3,6 +3,8 @@
 
 
 
+$('.wpcf7-submit').addClass('bouton');
+
 var dureeTransitionModale = 500;
 var modale = document.getElementById('modale-container');
 var btnFermetureModale = document.getElementById('close-modale');
@@ -37,6 +39,7 @@ $('.interaction-photo__btn').click(function() {
 });
 
 
+
 let pageActuelle = 1;
 $('#btn-charger-plus').on('click', function() {
     pageActuelle ++;
@@ -48,15 +51,37 @@ $('#btn-charger-plus').on('click', function() {
           action: 'load_more',
           paged: pageActuelle,
         },
-        success: function (res) {
-          $('.galerie__photos').append(res);
+        success: function (result) {
+            $('.galerie__photos').append(result);
         }
     });
 });
 
-console.log($('#filtre-format').val());
 
-$('.wpcf7-submit').addClass('bouton');
+
+$(document).on('change', '.js-filter-form', function(e) {
+    e.preventDefault();
+    var choix = $(this).attr('id');
+    var selection = $(this).find('option:selected').val();
+    console.log(choix);
+    console.log(selection);
+    
+    $.ajax({
+        type: 'POST',
+        url: '/wp-admin/admin-ajax.php',
+        data: {
+            action: 'filter',
+            nomTaxonomie: choix,
+            slugTaxonomie: selection
+        },
+        success: function(result) {
+            $('.galerie__photos').html(result);
+        },
+        /* error: function(result) {
+            console.warn(result);
+        } */
+    });
+});
 
 
 

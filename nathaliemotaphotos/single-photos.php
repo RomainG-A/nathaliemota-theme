@@ -9,7 +9,7 @@
                 <p>Catégorie : <?php echo afficherTaxonomie('categories'); ?></p>
                 <p>Format : <?php echo afficherTaxonomie('format'); ?></p>
                 <p>Type : <?php echo afficherChamp('type_photo') ?></p>
-                <p>Année : <?php echo get_the_date('Y');?></p>
+                <p>Année : <?php echo get_the_date('Y'); ?></p>
             </div>
             <img class="bloc-photo__image colonne" src="<?php the_post_thumbnail_url(); ?>">
         </section>
@@ -35,7 +35,7 @@
                 <img class="colonne img-medium" src="<?php the_post_thumbnail_url(); ?>" alt="Image similaire">
             </div>
             <!-- <input class="recommandations__btn bouton" type="button" value="Toutes les photos"> -->
-            <button class="recommandations__btn bouton" onclick="window.location.href='<?php echo site_url(); ?>'">
+            <button class="recommandations__btn bouton" onclick="window.location.href='<?php echo site_url() ?>'">
                 Toutes les photos
             </button>
             

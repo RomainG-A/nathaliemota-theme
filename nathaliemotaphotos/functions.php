@@ -45,7 +45,7 @@ function toutesLesTaxonomies($nomTaxonomie) {
         'orderby' => 'name'
     ))) {
         foreach ( $terms as $term ) {
-            echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+            echo '<option class="js-filter-item" value="' . $term->slug . '">' . $term->name . '</option>';
         }
     }
 }
@@ -55,10 +55,11 @@ function load_more() {
         'post_type' => 'photos',
         'orderby' => 'date',
         'order' => 'DESC',
-        'posts_per_page' => '4',
+        'posts_per_page' => 4,
         'paged' => $_POST['paged'])
     );
-    if($ajaxposts->have_posts()) {
+    afficherImages($ajaxposts);
+    /* if($ajaxposts->have_posts()) {
         while ($ajaxposts->have_posts()) {
             $ajaxposts->the_post();
             echo '<img class="colonne img-medium" src="';
@@ -67,8 +68,63 @@ function load_more() {
         }
     } else {
         echo '';
-    }
-    exit;
+    } */
+    //exit();
 }
 add_action('wp_ajax_load_more', 'load_more');
 add_action('wp_ajax_nopriv_load_more', 'load_more');
+
+
+
+
+
+function filter() {
+    $ajaxposts = new WP_Query(array(
+        'post_type' => 'photos',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => '4',
+        'paged' => '1',
+        'tax_query' => array(
+	        array(
+	            'taxonomy' => $_POST['nomTaxonomie'],
+                //'taxonomy' => 'categories',
+	            'field'    => 'slug',
+	            'terms'    => $_POST['slugTaxonomie'],
+                //'terms'    => 'concert',
+	        ),
+	    ),
+    ));
+    afficherImages($ajaxposts);
+    /* if($ajaxposts->have_posts()) {
+        while ($ajaxposts->have_posts()) {
+            $ajaxposts->the_post();
+            echo '<img class="colonne img-medium" src="';
+            echo the_post_thumbnail_url();
+            echo '" />';
+        }
+    }
+    else {
+        echo "Il n'y a pas d'images à charger";
+    } */
+    //wp_reset_postdata();
+    //exit();
+}
+add_action('wp_ajax_nopriv_filter', 'filter');
+add_action('wp_ajax_filter', 'filter');
+
+function afficherImages($ajaxposts) {
+    if($ajaxposts->have_posts()) {
+        while ($ajaxposts->have_posts()) {
+            $ajaxposts->the_post();
+            echo '<img class="colonne img-medium" src="';
+            echo the_post_thumbnail_url();
+            echo '" />';
+        }
+    }
+    else {
+        echo "Il n'y a pas d'images à charger";
+    }
+    //wp_reset_postdata();
+    exit();
+}
