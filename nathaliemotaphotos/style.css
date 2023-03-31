@@ -45,10 +45,59 @@ a {
   width: 49.2%;
 }
 
-.img-medium {
+.rangee {
   height: 526px;
+  margin-bottom: 20px;
+}
+.rangee .img-medium {
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 1;
+}
+.rangee .img-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 94%;
+  height: 94%;
+  z-index: 99;
+  margin-top: -526px;
+  padding: 3%;
+  /* opacity: 0; */
+}
+.rangee .img-hover #btn-plein-ecran {
+  width: 35px;
+  height: 35px;
+  align-self: flex-end;
+}
+.rangee .img-hover #btn-oeil {
+  width: 46px;
+  height: 46px;
+  margin: auto;
+  padding-bottom: 25px;
+}
+.rangee .img-hover div {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  line-height: 21px;
+}
+.rangee .img-hover div p:first-child {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.rangee .img-hover div p:last-child {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.rangee:hover > div {
+  opacity: 1;
 }
 
 @keyframes textLoop {
@@ -296,11 +345,8 @@ nav li:hover {
 .galerie__photos {
   flex-wrap: wrap;
 }
-.galerie .img-medium {
-  padding-bottom: 20px;
-}
 .galerie__btn {
-  display: block;
+  /* display: block; */
   margin: 27px auto 47px auto;
   width: 120px;
   height: 34px;
@@ -422,7 +468,7 @@ nav li:hover {
 .recommandations__btn {
   width: 214px;
   display: block;
-  margin: 71px auto;
+  margin: 51px auto 71px auto;
 }
 
 .interaction-photo p, .recommandations p {

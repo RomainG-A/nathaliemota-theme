@@ -87,13 +87,24 @@ add_action('wp_ajax_nopriv_order', 'order');
 add_action('wp_ajax_order', 'order');
 
 
-function afficherImages($ajaxposts, $exit) {
-    if($ajaxposts->have_posts()) {
-        while ($ajaxposts->have_posts()) {
-            $ajaxposts->the_post();
-            echo '<img class="colonne img-medium" src="';
-            echo the_post_thumbnail_url();
-            echo '" />';
+function afficherImages($galerie, $exit) {
+    if($galerie->have_posts()) {
+        while ($galerie->have_posts()) { ?>
+        <?php $galerie->the_post(); ?>
+            <div class="colonne">
+                <div class="rangee">
+                    <img class="img-medium" src="<?php echo the_post_thumbnail_url(); ?>" />
+                    <div class="img-hover" >
+                        <img id="btn-plein-ecran" src="<?php echo get_template_directory_uri(); ?>/assets/images/fullscreen.png" alt="Icône de plein écran" />
+                        <img id="btn-oeil" src="<?php echo get_template_directory_uri(); ?>/assets/images/eye_icon.png" alt="Icône en fome d'oeil" />
+                        <div>
+                            <p><?php the_title(); ?></p>
+                            <p><?php echo strip_tags(get_the_term_list($galerie->ID, 'categories')); ?></p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> <?php
         }
     }
     /* else {

@@ -12,7 +12,60 @@
     width: 49.2%;
 }
 
-.img-medium {
-    height: 526px;
-    object-fit: cover;
+$hauteur-photo: 526px;
+
+.rangee {
+    height: $hauteur-photo;
+    margin-bottom: 20px;
+    .img-medium {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;  
+    }  
+    .img-hover {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 94%;
+        height: 94%;
+        z-index: 99;
+        margin-top: - $hauteur-photo;
+        padding: 3%;
+        /* opacity: 0; */
+        #btn-plein-ecran {
+            width: 35px;
+            height: 35px;
+            align-self: flex-end;
+        }
+        #btn-oeil {
+            width: 46px;
+            height: 46px;
+            margin: auto;
+            padding-bottom: 25px;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            line-height: 21px;
+            p {
+                &:first-child {
+                    font-family: $police-secondaire;
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+                &:last-child {
+                    font-family: $police-principale;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    &:hover > div {
+        opacity: 1;
+    }
 }

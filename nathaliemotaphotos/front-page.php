@@ -71,20 +71,6 @@
                 'posts_per_page' => 4,
                 'paged' => 1)
             );
-            /* $galerie = new WP_Query(array (
-                'post_type' => 'photos',
-                'orderby' => 'date',
-                'order' => 'DESC',
-                'posts_per_page' => '4',
-                'paged' => 1,
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'categories',
-	                    'field'    => 'slug',
-	                    'terms'    => 'concert',
-                    ),
-                ),
-            )); */
             afficherImages($galerie, false);
         ?>
     </div>

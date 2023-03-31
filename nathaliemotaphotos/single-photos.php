@@ -59,7 +59,7 @@
             <div class="recommandations__images colonnes">
             <?php
                 $categorie = strip_tags(get_the_term_list($post->ID, 'categories'));
-                $random_image = new WP_Query(array (
+                $random_images = new WP_Query(array (
                     'post_type' => 'photos',
                     'tax_query' => array(
                         array(
@@ -71,19 +71,14 @@
                     'orderby' => 'rand',
                     'posts_per_page' => '2'));
 
-                $nombreImagesSimilaires = $random_image->post_count;
-                if ($random_image->have_posts() && $nombreImagesSimilaires > 1) {
-                    while ($random_image->have_posts()) {
-                        $random_image->the_post();
-                        echo '<img class="colonne img-medium" src="';
-                        echo the_post_thumbnail_url();
-                        echo '"alt="Image similaire" />';
-                    }
+                $nombreImagesSimilaires = $random_images->post_count;
+                if ($nombreImagesSimilaires > 1) {
+                    afficherImages($random_images, false);
                 }
                 else {
                     echo '<p>Il n\'y a pas encore d\'autres photos à afficher dans cette catégorie.</p>';
                 }
-                wp_reset_postdata();
+                /* wp_reset_postdata(); */
             ?> 
 
             </div>
