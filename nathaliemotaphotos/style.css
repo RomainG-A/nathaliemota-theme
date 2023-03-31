@@ -213,20 +213,27 @@ nav li:hover {
 }
 .modale__content__close {
   position: absolute;
-  margin-left: 588px;
-  margin-top: -15px;
-  color: white;
-  background-color: rgba(255, 53, 53, 0.5176470588);
+  /* margin-left: 600px;
+  margin-top: -25px; */
+  margin-left: 598px;
+  margin-top: -44px;
+  background-color: rgba(0, 0, 0, 0);
   font-size: 20px;
-  width: 25px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
 }
-.modale__content__close:hover {
-  background-color: #ff3535;
+.modale__content__close img {
+  width: 100%;
+  height: 100%;
+  padding: 70%;
+  border-radius: 50%;
   transition: all 200ms;
+}
+.modale__content__close img:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .modale__content__header {
   padding-top: 8px;

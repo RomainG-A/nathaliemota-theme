@@ -1,7 +1,7 @@
 <div class="modale" id="modale-container">
     <div class="modale__content">
         <button class="modale__content__close btn-close" id="close-modale" type="button">
-            X
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/close_icon.png" alt="Croix de fermeture" />
         </button>
         <div class="modale__content__header">
             <div class="modale__content__header__line">
