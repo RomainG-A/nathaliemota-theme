@@ -61,6 +61,7 @@
                 $categorie = strip_tags(get_the_term_list($post->ID, 'categories'));
                 $random_images = new WP_Query(array (
                     'post_type' => 'photos',
+                    'post__not_in' => array($post->ID),
                     'tax_query' => array(
                         array(
                             'taxonomy' => 'categories',
@@ -72,7 +73,7 @@
                     'posts_per_page' => '2'));
 
                 $nombreImagesSimilaires = $random_images->post_count;
-                if ($nombreImagesSimilaires > 1) {
+                if ($nombreImagesSimilaires > 0) {
                     afficherImages($random_images, false);
                 }
                 else {
