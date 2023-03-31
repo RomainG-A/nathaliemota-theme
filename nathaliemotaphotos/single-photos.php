@@ -24,11 +24,33 @@
                 <input class="interaction-photo__btn bouton btn-modale" type="button" value="Contact">
             </div>
             <div class="interaction-photo__navigation">
+                <?php
+                    $prevPost = get_previous_post();
+                    $nextPost = get_next_post();
+                ?>
                 <div class="fleches">
-                    <img class="fleche" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" alt="Flèche pointant vers la gauche" />
-                    <img class="fleche" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png" alt="Flèche pointant vers la droite" />
+                    <?php if (!empty($prevPost)) { 
+                        $prevThumbnail = get_the_post_thumbnail_url( $prevPost->ID );
+                        $prevLink = get_permalink($prevPost); ?>
+                        <a href="<?php echo $prevLink; ?>">
+                            <img class="fleche fleche-gauche" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" alt="Flèche pointant vers la gauche" />
+                        </a>
+                    <?php } else { ?>
+                        <img style="opacity:0; cursor: auto;" class="fleche " src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" />
+                    <?php } if (!empty($nextPost)) {
+                        $nextThumbnail = get_the_post_thumbnail_url( $nextPost->ID );
+                        $nextLink = get_permalink($nextPost); ?>
+                        <a href="<?php echo $nextLink; ?>">
+                            <img class="fleche fleche-droite" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png" alt="Flèche pointant vers la droite" />
+                        </a>
+                    <?php } ?>
                 </div>
-                <img class="preview" src="<?php the_post_thumbnail_url(); ?>" alt="Prévisualisation image">
+                <div class="preview">
+                    <img class="previous-image" src="<?php echo $prevThumbnail; ?>" alt="Prévisualisation image précédente">
+                </div>
+                <div class="preview">
+                    <img class="next-image" src="<?php echo $nextThumbnail; ?>" alt="Prévisualisation image suivante">
+                </div>
             </div>
         </section>
 

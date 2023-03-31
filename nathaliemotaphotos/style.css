@@ -379,20 +379,32 @@ nav li:hover {
 .interaction-photo__navigation .preview {
   width: 78px;
   height: 50%;
+  margin: auto 0 auto auto;
+}
+.interaction-photo__navigation .preview img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: auto 0 auto auto;
   opacity: 0;
+}
+.interaction-photo__navigation .preview .previous-image {
+  margin-top: 38%;
+}
+.interaction-photo__navigation .preview .next-image {
+  margin-top: -38%;
 }
 .interaction-photo__navigation .fleches {
   width: 108px;
   display: flex;
   justify-content: space-between;
   position: absolute;
-  margin-top: 99px;
+  margin-top: 92px;
 }
 .interaction-photo__navigation .fleches .fleche {
+  /* z-index: 15; */
   width: 25px;
+  cursor: pointer;
 }
 
 .recommandations {

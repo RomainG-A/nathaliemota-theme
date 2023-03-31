@@ -48,19 +48,32 @@
         .preview {
             width: 78px;
             height: 50%;
-            object-fit: cover;
             margin: auto 0 auto auto;
-            opacity: 0;
+
+            img {
+                width: 100%;
+                height: 100%;  
+                object-fit: cover;
+                opacity: 0;
+            }
+            .previous-image {
+                margin-top: 38%;
+            }
+            .next-image {
+                margin-top: -38%;
+            }
         }
         .fleches {
             width: 108px;
             display: flex;
             justify-content: space-between;
             position: absolute;
-            margin-top: 99px;
+            margin-top: 92px;
             
             .fleche {
+                /* z-index: 15; */
                 width: 25px;
+                cursor: pointer;
             }
         }
     } 

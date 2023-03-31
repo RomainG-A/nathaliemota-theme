@@ -38,11 +38,18 @@ $('.interaction-photo__btn').click(function() {
     $('#form-reference input').val($('#reference-photo').text());
 });
 
-$('.fleche').hover(
+$('.fleche-gauche').hover(
     function() {
-        $('.preview').css('opacity', '1');
+        $('.previous-image').css('opacity', '1');
     }, function() {
-        $('.preview').css('opacity', '0');
+        $('.previous-image').css('opacity', '0');
+    }
+);
+$('.fleche-droite').hover(
+    function() {
+        $('.next-image').css('opacity', '1');
+    }, function() {
+        $('.next-image').css('opacity', '0');
     }
 );
 
