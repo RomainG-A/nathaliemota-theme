@@ -9,7 +9,10 @@
         justify-content: center;
         li:nth-child(2) {
             margin-left: 86px;
-            margin-right: 86px;
+            /* margin-right: 86px; */
+        }
+        li { 
+            min-width: 196px;
         }
     }
 }

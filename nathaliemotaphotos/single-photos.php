@@ -20,7 +20,7 @@
 
         <section class="interaction-photo colonnes">
             <div>
-                <p>Cette photo vous intéresse ?</p>
+                <p class="texte">Cette photo vous intéresse ?</p>
                 <input class="interaction-photo__btn bouton btn-modale" type="button" value="Contact">
             </div>
             <div class="interaction-photo__navigation">
@@ -77,7 +77,7 @@
                     afficherImages($random_images, false);
                 }
                 else {
-                    echo '<p>Il n\'y a pas encore d\'autres photos à afficher dans cette catégorie.</p>';
+                    echo '<p class="texte">Il n\'y a pas encore d\'autres photos à afficher dans cette catégorie.</p>';
                 }
                 /* wp_reset_postdata(); */
             ?> 

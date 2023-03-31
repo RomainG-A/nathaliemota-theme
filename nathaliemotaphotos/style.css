@@ -81,7 +81,6 @@ a {
   width: 46px;
   height: 46px;
   margin: auto;
-  /* padding-bottom: 25px; */
 }
 .rangee .img-hover div {
   display: flex;
@@ -171,7 +170,10 @@ a {
 }
 .footer__nav li:nth-child(2) {
   margin-left: 86px;
-  margin-right: 86px;
+  /* margin-right: 86px; */
+}
+.footer__nav li {
+  min-width: 196px;
 }
 
 nav {
@@ -479,7 +481,7 @@ nav li:hover {
   margin: 51px auto 71px auto;
 }
 
-.interaction-photo p, .recommandations p {
+.texte {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 14px;
