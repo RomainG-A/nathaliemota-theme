@@ -38,20 +38,19 @@ $('.interaction-photo__btn').click(function() {
     $('#form-reference input').val($('#reference-photo').text());
 });
 
-$('.fleche-gauche').hover(
-    function() {
-        $('.previous-image').css('opacity', '1');
-    }, function() {
-        $('.previous-image').css('opacity', '0');
-    }
-);
-$('.fleche-droite').hover(
-    function() {
-        $('.next-image').css('opacity', '1');
-    }, function() {
-        $('.next-image').css('opacity', '0');
-    }
-);
+
+
+navigationPhotos($('.fleche-gauche'), $('.previous-image'));
+navigationPhotos($('.fleche-droite'), $('.next-image'));
+function navigationPhotos(fleche, image) {
+    fleche.hover(
+        function() {
+            image.css('opacity', '1');
+        }, function() {
+            image.css('opacity', '0');
+        }
+    );
+}
 
 let pageActuelle = 1;
 $('#btn-charger-plus').on('click', function() {
