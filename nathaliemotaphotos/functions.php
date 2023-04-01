@@ -50,20 +50,32 @@ add_action('wp_ajax_nopriv_load_more', 'load_more');
 
 
 function filter() {
-    $ajaxposts = new WP_Query(array(
-        'post_type' => 'photos',
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'posts_per_page' => -1,
-        'paged' => '1',
-        'tax_query' => array(
-	        array(
-	            'taxonomy' => $_POST['nomTaxonomie'],
-	            'field'    => 'slug',
-	            'terms'    => $_POST['slugTaxonomie'],
-	        ),
-	    ),
-    ));
+
+    if ($_POST['toutesCategories'] == "false") {
+        $ajaxposts = new WP_Query(array(
+            'post_type' => 'photos',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'posts_per_page' => 4,
+            'paged' => '1',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => $_POST['nomTaxonomie'],
+                    'field'    => 'slug',
+                    'terms'    => $_POST['slugTaxonomie'],
+                ),
+            ),
+        ));
+    }
+    else {
+        $ajaxposts = new WP_Query(array(
+            'post_type' => 'photos',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'posts_per_page' => 4,
+            'paged' => '1',
+        ));
+    }
     afficherImages($ajaxposts, true);
     /* wp_reset_postdata();
     exit(); */

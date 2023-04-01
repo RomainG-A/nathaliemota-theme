@@ -30,21 +30,14 @@ $(document).on('click', '.btn-plein-ecran', function() {
     $('.lightbox__image').html(creerImage);
     transitionPopup($('.lightbox'), 1);
 });
-/* $('.btn-plein-ecran').click(function() {
-    var image = $(this).parent().parent().prev();
-    var urlImage = image.attr('src');
-    var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
-    $('.lightbox__image').html(creerImage);
-    transitionPopup($('.lightbox'), 1);
-}); */
 btnFermetureLightbox.onclick = function() {
     transitionPopup($('.lightbox'), 0);
 }
-window.onclick = function(event) {
+/* window.onclick = function(event) {
     if (event.target == lightbox) {
         transitionPopup($('.lightbox'), 0);
     }
-}
+} */
 
 function transitionPopup(element, opacity) {
     if (opacity == 1) {
@@ -80,7 +73,12 @@ function navigationPhotos(fleche, image) {
     );
 }
 
+
+
 let pageActuelle = 1;
+let filtreTaxonomie = '';
+let filtreOrdre = '';
+
 $('#btn-charger-plus').on('click', function() {
     pageActuelle ++;
     $.ajax({
@@ -101,16 +99,18 @@ $(document).on('change', '.js-filter-form', function(e) {
     e.preventDefault();
     var choix = $(this).attr('id');
     var selection = $(this).find('option:selected').val();
-    console.log(choix);
-    console.log(selection);
-    
+    var toutesCategories = false;
+    if (choix === 'categories' && selection === 'all') {
+        toutesCategories = true;
+    }
     $.ajax({
         type: 'POST',
         url: '/wp-admin/admin-ajax.php',
         data: {
             action: 'filter',
             nomTaxonomie: choix,
-            slugTaxonomie: selection
+            slugTaxonomie: selection,
+            toutesCategories: toutesCategories
         },
         success: function(result) {
             $('.galerie__photos').html(result);
@@ -124,7 +124,6 @@ $(document).on('change', '.js-filter-form', function(e) {
 $(document).on('change', '.js-ordre-form', function(e) {
     //e.preventDefault();
     var ordre = $(this).find('option:selected').val();
-    console.log(ordre);
     
     $.ajax({
         type: 'POST',

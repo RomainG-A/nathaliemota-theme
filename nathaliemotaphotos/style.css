@@ -83,8 +83,8 @@ a {
   width: 35px;
   height: 35px;
   align-self: flex-end;
-  padding-top: 2%;
-  padding-right: 2%;
+  margin-top: 2%;
+  margin-right: 2%;
   cursor: pointer;
 }
 .rangee > div .img-hover a {
