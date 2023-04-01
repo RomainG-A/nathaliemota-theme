@@ -12,7 +12,8 @@
     width: 49.2%;
 }
 
-$hauteur-photo: 526px;
+/* $hauteur-photo: 526px; */
+$hauteur-photo: 556px;
 
 .rangee {
     height: $hauteur-photo;
@@ -49,9 +50,9 @@ $hauteur-photo: 526px;
                 width: 35px;
                 height: 35px;
                 align-self: flex-end;
-                z-index: 99;
                 padding-top: 2%;
                 padding-right: 2%;
+                cursor: pointer;
             }
             a {
                 width: 46px;

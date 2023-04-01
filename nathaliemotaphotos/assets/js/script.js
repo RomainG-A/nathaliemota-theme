@@ -41,6 +41,9 @@ $('.interaction-photo__btn').click(function() {
 
 
 $('.btn-plein-ecran').click(function() {
+    var urlImage = $(this).parent().parent().prev().attr('src');
+    var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
+    $('.lightbox__container').html(creerImage);
     $('.lightbox').css('display', 'flex');
 });
 
