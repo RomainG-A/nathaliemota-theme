@@ -53,10 +53,14 @@ $hauteur-photo: 526px;
                 padding-top: 2%;
                 padding-right: 2%;
             }
-            .btn-oeil {
+            a {
                 width: 46px;
                 height: 46px;
                 margin: auto;
+                .btn-oeil {
+                    width: 100%;
+                    height: auto;
+                }
             }
             .img-infos {
                 

@@ -86,10 +86,14 @@ a {
   padding-top: 2%;
   padding-right: 2%;
 }
-.rangee > div .img-hover .btn-oeil {
+.rangee > div .img-hover a {
   width: 46px;
   height: 46px;
   margin: auto;
+}
+.rangee > div .img-hover a .btn-oeil {
+  width: 100%;
+  height: auto;
 }
 .rangee > div .img-hover .img-infos {
   display: flex;
