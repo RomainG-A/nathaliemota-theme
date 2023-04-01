@@ -40,6 +40,12 @@ $('.interaction-photo__btn').click(function() {
 
 
 
+$('.btn-plein-ecran').click(function() {
+    $('.lightbox').css('display', 'flex');
+});
+
+
+
 navigationPhotos($('.fleche-gauche'), $('.previous-image'));
 navigationPhotos($('.fleche-droite'), $('.next-image'));
 function navigationPhotos(fleche, image) {

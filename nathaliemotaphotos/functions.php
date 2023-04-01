@@ -96,8 +96,8 @@ function afficherImages($galerie, $exit) {
                     <img class="img-medium" src="<?php echo the_post_thumbnail_url(); ?>" />
                     <a href="<?php echo get_post_permalink(); ?>">
                         <div class="img-hover" >
-                            <img id="btn-plein-ecran" src="<?php echo get_template_directory_uri(); ?>/assets/images/fullscreen.png" alt="Icône de plein écran" />
-                            <img id="btn-oeil" src="<?php echo get_template_directory_uri(); ?>/assets/images/eye_icon.png" alt="Icône en fome d'oeil" />
+                            <img class="btn-plein-ecran" src="<?php echo get_template_directory_uri(); ?>/assets/images/fullscreen.png" alt="Icône de plein écran" />
+                            <img class="btn-oeil" src="<?php echo get_template_directory_uri(); ?>/assets/images/eye_icon.png" alt="Icône en fome d'oeil" />
                             <div>
                                 <p><?php the_title(); ?></p>
                                 <p><?php echo strip_tags(get_the_term_list($galerie->ID, 'categories')); ?></p>

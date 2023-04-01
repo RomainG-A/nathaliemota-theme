@@ -1,7 +1,10 @@
 
 </main>
 
-<?php get_template_part('modale'); ?>
+<?php 
+    get_template_part('modale'); 
+    get_template_part('lightbox');
+?>
 
 <footer class="footer">
     <nav class="footer__nav">
