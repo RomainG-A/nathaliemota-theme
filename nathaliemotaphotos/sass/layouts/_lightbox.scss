@@ -1,21 +1,27 @@
 .lightbox {
-    /* display: none; */
-    /* opacity: 0; */
     display: none;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    /* overflow: auto; */
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 99;
     align-items: center;
     justify-content: center;
+
+    &__close {
+        margin-left: 598px;
+        margin-top: -44px;
+        background: none;
+        align-self: flex-start;
+        margin-left: 95%;
+        margin-top: 2%;
+    }
+
     &__container {
-        /* overflow: hidden; */
-        height: 80%;
-        width: 80%;
+        height: 90%;
+        width: auto;
         img {
             width: 100%;
             height: 100%;

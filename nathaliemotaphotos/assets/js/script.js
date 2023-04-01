@@ -8,6 +8,7 @@ $('.wpcf7-submit').addClass('bouton');
 var dureeTransitionModale = 500;
 var modale = document.getElementById('modale-container');
 var btnFermetureModale = document.getElementById('close-modale');
+var btnFermetureLightbox = document.getElementById('close-lightbox');
 
 $('.btn-modale').click(function() {
     $('.modale').css('display', 'flex');
@@ -39,14 +40,44 @@ $('.interaction-photo__btn').click(function() {
 });
 
 
-
 $('.btn-plein-ecran').click(function() {
-    var urlImage = $(this).parent().parent().prev().attr('src');
+    var image = $(this).parent().parent().prev();
+    var urlImage = image.attr('src');
     var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
     $('.lightbox__container').html(creerImage);
     $('.lightbox').css('display', 'flex');
 });
 
+btnFermetureLightbox.onclick = function() {
+    console.log("ok");
+    $('.lightbox').css('display', 'none');
+}
+
+/* $('.btn-plein-ecran').click(function() {
+    var image = $(this).parent().parent().prev();
+    var urlImage = image.attr('src');
+    var imgageElement = new Image();
+    imgageElement.src = urlImage;
+    imgageElement.onload = function() {
+        var widthImage = imgageElement.naturalWidth;
+        var heightImage = imgageElement.naturalHeight;
+        var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
+        if (widthImage >= heightImage) {
+            $('.lightbox__container').css({
+                'width': '90%',
+                'height': 'auto'
+            });
+        }
+        else {
+            $('.lightbox__container').css({
+                'height': '90%',
+                'width': 'auto'
+            });
+        }
+        $('.lightbox__container').html(creerImage);
+        $('.lightbox').css('display', 'flex');
+    };
+}); */
 
 
 navigationPhotos($('.fleche-gauche'), $('.previous-image'));
