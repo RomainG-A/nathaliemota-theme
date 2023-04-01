@@ -46,6 +46,9 @@ $('.btn-plein-ecran').click(function() {
     var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
     $('.lightbox__container').html(creerImage);
     $('.lightbox').css('display', 'flex');
+    $('.lightbox').animate({
+        opacity: 1
+    }, dureeTransitionModale);
 });
 
 btnFermetureLightbox.onclick = function() {
