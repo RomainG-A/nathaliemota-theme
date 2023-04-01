@@ -5,82 +5,60 @@
 
 $('.wpcf7-submit').addClass('bouton');
 
-var dureeTransitionModale = 500;
+var dureeTransitionPopup = 500;
 var modale = document.getElementById('modale-container');
+var lightbox = document.getElementById('lightbox-container');
 var btnFermetureModale = document.getElementById('close-modale');
 var btnFermetureLightbox = document.getElementById('close-lightbox');
 
 $('.btn-modale').click(function() {
-    $('.modale').css('display', 'flex');
-    transitionModale(1);
+    transitionPopup($('.modale'), 1);
 });
 btnFermetureModale.onclick = function() {
-    fermetureModale();
+    transitionPopup($('.modale'), 0);
 }
 window.onclick = function(event) {
     if (event.target == modale) {
-        fermetureModale();
+        transitionPopup($('.modale'), 0);
     }
 }
-
-function fermetureModale() {
-    transitionModale(0);
-    setTimeout(function() {
-        $('.modale').css('display', 'none');
-    }, dureeTransitionModale);
-}
-function transitionModale(opacity) {
-    $('.modale').animate({
-        opacity: opacity
-    }, dureeTransitionModale);
-}
-
-$('.interaction-photo__btn').click(function() {
-    $('#form-reference input').val($('#reference-photo').text());
-});
-
 
 $('.btn-plein-ecran').click(function() {
     var image = $(this).parent().parent().prev();
     var urlImage = image.attr('src');
     var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
-    $('.lightbox__container').html(creerImage);
-    $('.lightbox').css('display', 'flex');
-    $('.lightbox').animate({
-        opacity: 1
-    }, dureeTransitionModale);
+    $('.lightbox__image').html(creerImage);
+    transitionPopup($('.lightbox'), 1);
 });
-
 btnFermetureLightbox.onclick = function() {
-    console.log("ok");
-    $('.lightbox').css('display', 'none');
+    transitionPopup($('.lightbox'), 0);
+}
+window.onclick = function(event) {
+    if (event.target == lightbox) {
+        transitionPopup($('.lightbox'), 0);
+    }
 }
 
-/* $('.btn-plein-ecran').click(function() {
-    var image = $(this).parent().parent().prev();
-    var urlImage = image.attr('src');
-    var imgageElement = new Image();
-    imgageElement.src = urlImage;
-    imgageElement.onload = function() {
-        var widthImage = imgageElement.naturalWidth;
-        var heightImage = imgageElement.naturalHeight;
-        var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
-        if (widthImage >= heightImage) {
-            $('.lightbox__container').css({
-                'width': '90%',
-                'height': 'auto'
-            });
-        }
-        else {
-            $('.lightbox__container').css({
-                'height': '90%',
-                'width': 'auto'
-            });
-        }
-        $('.lightbox__container').html(creerImage);
-        $('.lightbox').css('display', 'flex');
-    };
-}); */
+function transitionPopup(element, opacity) {
+    if (opacity == 1) {
+        $(element).css('display', 'flex');
+    }
+    else if (opacity == 0) {
+        setTimeout(function() {
+            $(element).css('display', 'none');
+        }, dureeTransitionPopup);
+    }
+    $(element).animate({
+        opacity: opacity
+    }, dureeTransitionPopup);
+}
+
+
+
+$('.interaction-photo__btn').click(function() {
+    $('#form-reference input').val($('#reference-photo').text());
+});
+
 
 
 navigationPhotos($('.fleche-gauche'), $('.previous-image'));

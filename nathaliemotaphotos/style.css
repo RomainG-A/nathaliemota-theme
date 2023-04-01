@@ -336,11 +336,11 @@ nav li:hover {
   margin-left: 95%;
   margin-top: 2%;
 }
-.lightbox__container {
+.lightbox__image {
   height: 90%;
   width: auto;
 }
-.lightbox__container img {
+.lightbox__image img {
   width: 100%;
   height: 100%;
 }
