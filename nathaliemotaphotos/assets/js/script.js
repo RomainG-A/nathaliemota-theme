@@ -23,13 +23,20 @@ window.onclick = function(event) {
     }
 }
 
-$('.btn-plein-ecran').click(function() {
+$(document).on('click', '.btn-plein-ecran', function() {
     var image = $(this).parent().parent().prev();
     var urlImage = image.attr('src');
     var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
     $('.lightbox__image').html(creerImage);
     transitionPopup($('.lightbox'), 1);
 });
+/* $('.btn-plein-ecran').click(function() {
+    var image = $(this).parent().parent().prev();
+    var urlImage = image.attr('src');
+    var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
+    $('.lightbox__image').html(creerImage);
+    transitionPopup($('.lightbox'), 1);
+}); */
 btnFermetureLightbox.onclick = function() {
     transitionPopup($('.lightbox'), 0);
 }
