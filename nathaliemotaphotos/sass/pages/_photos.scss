@@ -96,3 +96,42 @@
     font-size: 14px;
     margin-right: 28px;
 }
+
+
+
+@media screen and (max-width: 1000px) {
+    .bloc-photo {
+        margin-top: 0;
+        h1 {
+            width: 100%;
+            margin-top: 40px;
+            font-size: 46px;
+        }
+    }
+    .page-photo .colonnes {
+        flex-direction: column-reverse;
+    }
+    .interaction-photo {
+        height: 133px;
+        > div {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 26px;
+        }
+        &__btn {
+            margin-top: 21px;
+        }
+        &__navigation .fleches {
+            display: none;
+        }
+    }
+    .recommandations {
+        padding-top: 30px;
+        h2 {
+            padding-bottom: 30px;
+        }
+        &__btn {
+            margin: 11px auto 31px auto;
+        }
+    }
+}

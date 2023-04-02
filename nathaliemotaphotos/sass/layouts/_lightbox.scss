@@ -33,6 +33,10 @@
 
 @media screen and (max-width: 1000px) {
     .lightbox {
+        &__close {
+            margin-left: 91%;
+            margin-top: 1%;
+        }
         &__image {
             width: 90%;
             height: auto;
