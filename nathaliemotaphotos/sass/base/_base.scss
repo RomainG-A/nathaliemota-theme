@@ -15,3 +15,15 @@ a {
     all: unset;
     cursor: pointer;
 }
+
+.bloc-page {
+    width: 80%;
+    padding: 0 10%;
+}
+.colonnes {
+    display: flex;
+    justify-content: space-between;
+}
+.colonne {
+    width: 49.2%;
+}
