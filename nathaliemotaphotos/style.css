@@ -62,7 +62,7 @@ a {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-281px);
+    transform: translateX(-280px);
   }
 }
 .bouton {
@@ -120,8 +120,14 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
+  .header__heading {
+    width: 138px;
+  }
   .header__nav {
-    display: none;
+    font-size: 12px;
+  }
+  .header li {
+    margin-left: 0px;
   }
 }
 .footer {
@@ -262,7 +268,7 @@ nav li:hover {
   width: 597px;
   height: 759px;
   border: 5px solid black;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: white;
 }
 .modale__content__close {
@@ -287,8 +293,8 @@ nav li:hover {
   display: inline-flex;
 }
 .modale__content__header__line img {
-  width: 281px;
-  height: 49px;
+  width: 280px;
+  height: 48px;
 }
 .modale__content__header__line:first-child {
   animation: textLoop 10s linear infinite;
@@ -344,6 +350,40 @@ nav li:hover {
   font-size: 14px;
 }
 
+@media screen and (max-width: 1000px) {
+  .modale__content {
+    height: 95%;
+    width: 90%;
+  }
+  .modale__content__close {
+    margin-left: 89%;
+    margin-top: -5%;
+  }
+  .modale__content__close img {
+    padding: 70%;
+    padding: 0;
+  }
+  .modale__content__close img:hover {
+    background: none;
+  }
+  .modale__content__header {
+    margin-bottom: -24px;
+  }
+  .modale__content__header__line img {
+    width: 140px;
+    height: 24px;
+  }
+  .modale__content form {
+    width: 66%;
+    margin-bottom: 10px;
+  }
+  .modale__content form > p:first-child {
+    margin-top: 0;
+  }
+  .modale__content form .bouton {
+    width: 100%;
+  }
+}
 .lightbox {
   display: none;
   opacity: 0;
@@ -466,7 +506,7 @@ nav li:hover {
 @media screen and (max-width: 1000px) {
   .filtres {
     margin-bottom: 30px;
-    width: 300%;
+    /* width: 300%; */
   }
   .filtres__taxonomie {
     width: 66.6%;
