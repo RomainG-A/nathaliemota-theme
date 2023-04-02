@@ -27,3 +27,19 @@ a {
 .colonne {
     width: 49.2%;
 }
+
+
+#wpadminbar {
+    position: fixed;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .bloc-page {
+        width: 80%;
+    }
+    .colonne {
+        width: 100%;
+    }
+}

@@ -7,7 +7,7 @@ $('.wpcf7-submit').addClass('bouton');
 
 var dureeTransitionPopup = 500;
 var modale = document.getElementById('modale-container');
-var lightbox = document.getElementById('lightbox-container');
+// var lightbox = document.getElementById('lightbox-container');
 var btnFermetureModale = document.getElementById('close-modale');
 var btnFermetureLightbox = document.getElementById('close-lightbox');
 
@@ -72,6 +72,15 @@ function navigationPhotos(fleche, image) {
         }
     );
 }
+
+
+
+$(window).resize(function() {
+    var width = $(window).width();
+    if (width < 1000){
+      alert('Your screen is too small');
+    }
+});
 
 
 

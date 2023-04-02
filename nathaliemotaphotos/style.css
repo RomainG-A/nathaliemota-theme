@@ -45,6 +45,18 @@ a {
   width: 49.2%;
 }
 
+#wpadminbar {
+  position: fixed;
+}
+
+@media screen and (max-width: 1000px) {
+  .bloc-page {
+    width: 80%;
+  }
+  .colonne {
+    width: 100%;
+  }
+}
 @keyframes textLoop {
   from {
     transform: translateX(0);
@@ -107,6 +119,11 @@ a {
   margin-left: 45px;
 }
 
+@media screen and (max-width: 1000px) {
+  .header__nav {
+    display: none;
+  }
+}
 .footer {
   position: relative;
   bottom: 0;
@@ -125,8 +142,21 @@ a {
   min-width: 196px;
 }
 
+@media screen and (max-width: 1000px) {
+  .footer {
+    text-align: center;
+    padding: 43px 0;
+  }
+  .footer__nav li:nth-child(2) {
+    margin: 24px 0;
+  }
+  .footer__nav, .footer .menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .rangee {
-  height: 556px;
+  height: 74vh;
   margin-bottom: 20px;
 }
 .rangee .img-medium {
@@ -143,18 +173,18 @@ a {
 .rangee > div:hover .img-hover {
   opacity: 1;
 }
-.rangee > div .img-hover {
+.rangee .img-hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  margin-top: -556px;
+  margin-top: -74vh;
   opacity: 0;
   position: relative;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.92) 100%);
 }
-.rangee > div .img-hover .btn-plein-ecran {
+.rangee .img-hover .btn-plein-ecran {
   width: 35px;
   height: 35px;
   align-self: flex-end;
@@ -162,16 +192,16 @@ a {
   margin-right: 2%;
   cursor: pointer;
 }
-.rangee > div .img-hover a {
+.rangee .img-hover a {
   width: 46px;
   height: 46px;
   margin: auto;
 }
-.rangee > div .img-hover a .btn-oeil {
+.rangee .img-hover a .btn-oeil {
   width: 100%;
   height: auto;
 }
-.rangee > div .img-hover .img-infos {
+.rangee .img-hover .img-infos {
   display: flex;
   justify-content: space-between;
   color: white;
@@ -179,19 +209,27 @@ a {
   padding-right: 3%;
   padding-bottom: 2%;
 }
-.rangee > div .img-hover .img-infos p:first-child {
+.rangee .img-hover .img-infos p:first-child {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
 }
-.rangee > div .img-hover .img-infos p:last-child {
+.rangee .img-hover .img-infos p:last-child {
   font-family: "Space Mono", monospace;
   font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 1000px) {
+  .rangee {
+    height: 45vh;
+  }
+  .rangee .img-hover {
+    margin-top: -45vh;
+  }
+}
 nav {
   display: flex;
   font-family: "Space Mono", monospace;
@@ -320,8 +358,6 @@ nav li:hover {
   justify-content: center;
 }
 .lightbox__close {
-  margin-left: 598px;
-  margin-top: -44px;
   background: none;
   align-self: flex-start;
   margin-left: 95%;
@@ -336,9 +372,20 @@ nav li:hover {
   height: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+  .lightbox__image {
+    width: 90%;
+    height: auto;
+  }
+  .lightbox__image img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .hero {
   width: 100%;
-  height: 966px;
+  /* height: 966px; */
+  height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -347,7 +394,8 @@ nav li:hover {
   position: absolute;
   font-family: "Space Mono", monospace;
   font-style: italic;
-  font-size: 96px;
+  /* font-size: 96px; */
+  font-size: 6.3vw;
   text-transform: uppercase;
   text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
   mix-blend-mode: lighten;
@@ -415,6 +463,17 @@ nav li:hover {
   opacity: 1;
 }
 
+@media screen and (max-width: 1000px) {
+  .filtres {
+    /* display: none; */
+  }
+  .hero {
+    height: 40vh;
+  }
+  .hero h1 {
+    text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  }
+}
 .bloc-photo {
   margin-top: 38px;
   font-family: "Space Mono", monospace;

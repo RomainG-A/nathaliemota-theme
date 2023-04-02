@@ -15,3 +15,17 @@
         }
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .footer {
+        text-align: center;
+        padding: 43px 0;
+        &__nav li:nth-child(2) {
+            margin: 24px 0;
+        }
+        &__nav, .menu {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
