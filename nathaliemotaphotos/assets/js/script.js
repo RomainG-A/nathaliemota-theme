@@ -100,7 +100,7 @@ $(document).on('change', '.js-filter-form', function(e) {
     var choix = $(this).attr('id');
     var selection = $(this).find('option:selected').val();
     var toutesCategories = false;
-    if (choix === 'categories' && selection === 'all') {
+    if (choix == 'categories' && selection == 'all') {
         toutesCategories = true;
     }
     $.ajax({

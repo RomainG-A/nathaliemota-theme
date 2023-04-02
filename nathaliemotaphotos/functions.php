@@ -51,6 +51,24 @@ add_action('wp_ajax_nopriv_load_more', 'load_more');
 
 function filter() {
 
+    /* $ajaxposts = new WP_Query(array(
+        'post_type' => 'photos',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => 4,
+        'paged' => '1',
+    ));
+    if ($_POST['toutesCategories'] == "false") {
+        $taxonomie = array(
+            array(
+                'taxonomy' => $_POST['nomTaxonomie'],
+                'field' => 'slug',
+                'terms' => $_POST['slugTaxonomie'],
+            ),
+        );
+        $ajaxposts->set('tax_query', $taxonomie);
+    }
+    afficherImages($ajaxposts, true); */
     if ($_POST['toutesCategories'] == "false") {
         $ajaxposts = new WP_Query(array(
             'post_type' => 'photos',
@@ -61,8 +79,8 @@ function filter() {
             'tax_query' => array(
                 array(
                     'taxonomy' => $_POST['nomTaxonomie'],
-                    'field'    => 'slug',
-                    'terms'    => $_POST['slugTaxonomie'],
+                    'field' => 'slug',
+                    'terms' => $_POST['slugTaxonomie'],
                 ),
             ),
         ));
@@ -77,8 +95,6 @@ function filter() {
         ));
     }
     afficherImages($ajaxposts, true);
-    /* wp_reset_postdata();
-    exit(); */
 }
 add_action('wp_ajax_nopriv_filter', 'filter');
 add_action('wp_ajax_filter', 'filter');
