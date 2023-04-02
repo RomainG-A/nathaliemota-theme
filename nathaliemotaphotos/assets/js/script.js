@@ -75,15 +75,6 @@ function navigationPhotos(fleche, image) {
 
 
 
-$(window).resize(function() {
-    var width = $(window).width();
-    if (width < 1000){
-      alert('Your screen is too small');
-    }
-});
-
-
-
 let pageActuelle = 1;
 let filtreTaxonomie = '';
 let filtreOrdre = '';

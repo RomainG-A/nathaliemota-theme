@@ -82,7 +82,20 @@
 
 @media screen and (max-width: 1000px) {
     .filtres {
-        /* display: none; */
+        margin-bottom: 30px;
+        width: 300%;
+        &__taxonomie {
+            width: 66.6%;
+            form {
+                padding-right: 5%;
+            }
+        }
+        &__tri {
+            width: 33.3%;
+            div:first-child {
+                width: 0%;
+            }
+        }
     }
     .hero {
         height: 40vh;
