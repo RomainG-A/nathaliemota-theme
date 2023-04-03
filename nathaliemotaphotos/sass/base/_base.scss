@@ -28,6 +28,42 @@ a {
     width: 49.2%;
 }
 
+h1 {
+    font-family: $police-principale;
+    font-weight: 400;
+    font-size: 66px;
+    line-height: 65px;
+    text-transform: uppercase;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    h1 {
+        margin-bottom: 100px;
+    }
+    &__contenu {
+        h2 {
+            font-family: $police-principale; 
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        p {
+            
+            margin-bottom: 30px;
+        }
+        font-family: $police-secondaire;
+        font-weight: 400;
+        width: 70%;
+        text-align: justify;
+    }
+}
+.page-404 {
+    height: 50vh;
+}
+
 
 #wpadminbar {
     position: fixed;

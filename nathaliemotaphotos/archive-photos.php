@@ -1,9 +1,6 @@
-<?php get_header(); ?>
+<?php
 
-    <h1>test</h1>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php if ( comments_open() && !post_password_required() ) { comments_template( '', true ); } ?>
-<?php endwhile; endif; ?>
+wp_redirect( home_url(), 301 );
+exit;
 
-<?php get_footer(); ?>
+?>
