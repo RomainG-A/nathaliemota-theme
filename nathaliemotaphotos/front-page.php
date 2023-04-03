@@ -34,7 +34,7 @@
             <form id="categories" class="js-filter-form filtres__taxonomie_categories filtre colonne">
                 <label for="select-categorie">Catégories</label>
                 <select id="select-categorie" name="categorie">
-                    <option value="" hidden></option>
+                    <option value="all" hidden></option>
                     <option value="all">Toutes les catégories</option>
                     <?php afficherTaxonomies('categories'); ?>
                 </select>
