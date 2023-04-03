@@ -55,6 +55,35 @@ function transitionPopup(element, opacity) {
 
 
 
+let menuMobileOrigine = $('.header-mobile').height() * (-1);
+let menuOuvert = -1;
+$('.header-mobile').css('margin-top', menuMobileOrigine);
+
+$('.header__btn-menu').click(function() {
+    if (menuOuvert == -1) {
+        $('.header-mobile').css('opacity', '1');
+        effetMenu(0, 0);
+    }
+    else {
+        effetMenu(1, menuMobileOrigine);
+        setTimeout(function() {
+            $('.header-mobile').css('opacity', '0');
+        }, dureeTransitionPopup);
+    }
+});
+
+function effetMenu(opacite, position) {
+    setTimeout(function() {
+        $('.header-desktop').css('opacity', opacite);
+    }, (dureeTransitionPopup / 2));
+    $('.header-mobile').animate({
+        'margin-top': position
+    }, dureeTransitionPopup);
+    menuOuvert = menuOuvert * (-1);
+}
+
+
+
 $('.interaction-photo__btn').click(function() {
     $('#form-reference input').val($('#reference-photo').text());
 });

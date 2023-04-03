@@ -47,6 +47,7 @@ a {
 
 #wpadminbar {
   position: fixed;
+  z-index: 95;
 }
 
 @media screen and (max-width: 1000px) {
@@ -123,6 +124,10 @@ a {
   margin-left: 45px;
 }
 
+.header-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
   .header {
     flex-direction: column;
@@ -143,10 +148,19 @@ a {
     display: block;
     height: 19px;
     width: auto;
-    /* height: auto; */
   }
-  .header__nav {
-    /* display: none; */
+  .header-desktop__nav {
+    display: none;
+  }
+  .header-mobile {
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+  }
+  .header-mobile__nav {
+    z-index: 90;
+    /* position: absolute; */
     width: 100%;
     text-align: center;
     flex-direction: column;
@@ -154,13 +168,13 @@ a {
     font-size: 23px;
     line-height: 34px;
     background-color: #E00000;
-    z-index: 90;
     padding-top: 40px;
+    padding-bottom: 20px;
   }
-  .header__nav .menu {
+  .header-mobile__nav .menu {
     flex-direction: column;
   }
-  .header li {
+  .header-mobile li {
     margin-left: 0px;
     margin-bottom: 58px;
   }
