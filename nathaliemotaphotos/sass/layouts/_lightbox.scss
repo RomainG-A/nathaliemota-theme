@@ -1,5 +1,4 @@
 .lightbox {
-    
     display: none;
     opacity: 0;
     position: fixed;
@@ -12,14 +11,12 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
-
     &__close {
         background: none;
         align-self: flex-start;
         margin-left: 95%;
         margin-top: 2%;
     }
-
     &__image {
         height: 90%;
         width: auto;

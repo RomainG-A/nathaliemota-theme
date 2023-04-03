@@ -68,7 +68,6 @@ add_action('wp_ajax_filter', 'filter');
 
 
 
-/* $messageErreur = false; */
 function afficherImages($galerie, $exit) {
     if($galerie->have_posts()) {
         while ($galerie->have_posts()) { ?>
@@ -91,14 +90,10 @@ function afficherImages($galerie, $exit) {
                 </div>
             </div> <?php
         }
-        /* $messageErreur = false; */
     }
-    /* else {
-        if (!$messageErreur) {
-            echo "Il n'y a pas d'images à charger";
-            $messageErreur = true;
-        }
-    } */
+    else {
+        echo "";
+    }
     wp_reset_postdata();
     if ($exit) {
         exit(); 

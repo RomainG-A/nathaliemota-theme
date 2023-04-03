@@ -45,19 +45,18 @@ h1 {
         margin-bottom: 100px;
     }
     &__contenu {
+        font-family: $police-secondaire;
+        font-weight: 400;
+        width: 70%;
+        text-align: justify;
         h2 {
             font-family: $police-principale; 
             text-transform: uppercase;
             margin-bottom: 30px;
         }
         p {
-            
             margin-bottom: 30px;
         }
-        font-family: $police-secondaire;
-        font-weight: 400;
-        width: 70%;
-        text-align: justify;
     }
 }
 .page-404 {
@@ -78,5 +77,13 @@ h1 {
     }
     .colonne {
         width: 100%;
+    }
+    h1 {
+        font-size: 46px;
+    }
+    .page {
+        &__contenu {
+            width: 90%;
+        }
     }
 }

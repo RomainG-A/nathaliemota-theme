@@ -94,6 +94,12 @@ h1 {
   .colonne {
     width: 100%;
   }
+  h1 {
+    font-size: 46px;
+  }
+  .page__contenu {
+    width: 90%;
+  }
 }
 @keyframes textLoop {
   from {
@@ -198,7 +204,6 @@ h1 {
   }
   .header-mobile__nav {
     z-index: 90;
-    /* position: absolute; */
     width: 100%;
     text-align: center;
     flex-direction: column;
@@ -516,7 +521,6 @@ nav li:hover {
 }
 .hero {
   width: 100%;
-  /* height: 966px; */
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -526,7 +530,6 @@ nav li:hover {
   position: absolute;
   font-family: "Space Mono", monospace;
   font-style: italic;
-  /* font-size: 96px; */
   font-size: 6.3vw;
   text-transform: uppercase;
   text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
@@ -599,11 +602,9 @@ nav li:hover {
   .filtres {
     flex-direction: column;
     margin-bottom: 30px;
-    /* width: 300%; */
   }
   .filtres__taxonomie {
     width: 100%;
-    /* width: 66.6%; */
   }
   .filtres__taxonomie form {
     width: 47.5%;
@@ -613,7 +614,6 @@ nav li:hover {
   }
   .filtres__tri {
     width: 100%;
-    /* width: 33.3%; */
   }
   .filtres__tri div:first-child {
     width: 0%;
