@@ -148,6 +148,7 @@ a {
     display: block;
     height: 19px;
     width: auto;
+    cursor: pointer;
   }
   .header-desktop__nav {
     display: none;
@@ -406,7 +407,7 @@ nav li:hover {
   }
   .modale__content__close {
     margin-left: 89%;
-    margin-top: -5%;
+    margin-top: -15px;
   }
   .modale__content__close img {
     padding: 70%;
@@ -445,6 +446,7 @@ nav li:hover {
   z-index: 99;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 .lightbox__close {
   background: none;
