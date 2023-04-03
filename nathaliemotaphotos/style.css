@@ -512,20 +512,29 @@ nav li:hover {
 
 @media screen and (max-width: 1000px) {
   .filtres {
+    flex-direction: column;
     margin-bottom: 30px;
     /* width: 300%; */
   }
   .filtres__taxonomie {
-    width: 66.6%;
+    width: 100%;
+    /* width: 66.6%; */
   }
   .filtres__taxonomie form {
+    width: 47.5%;
+  }
+  .filtres__taxonomie form:first-child {
     padding-right: 5%;
   }
   .filtres__tri {
-    width: 33.3%;
+    width: 100%;
+    /* width: 33.3%; */
   }
   .filtres__tri div:first-child {
     width: 0%;
+  }
+  .filtres select {
+    padding-left: 10px;
   }
   .hero {
     height: 40vh;
