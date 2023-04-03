@@ -24,25 +24,26 @@
         }
         wp_reset_postdata();
     ?> 
-
 </section>
 
 <section class="galerie bloc-page">
 
     <div class="filtres colonnes">
-
+        
         <div class="filtres__taxonomie colonnes colonne">
             <form id="categories" class="js-filter-form filtres__taxonomie_categories filtre colonne">
                 <label for="select-categorie">Catégories</label>
                 <select id="select-categorie" name="categorie">
-                    <option value="all"></option>
+                    <option value="" hidden></option>
+                    <option value="all">Toutes les catégories</option>
                     <?php afficherTaxonomies('categories'); ?>
                 </select>
             </form>
             <form id="format" class="js-filter-form filtres_taxonomie__formats filtre colonne">
                 <label for="select-format">Formats</label>
                 <select id="select-format" name="format">
-                    <option value="all"></option>
+                    <option value="all" hidden></option>
+                    <option value="all">Tous les formats</option>
                     <?php afficherTaxonomies('format'); ?>
                 </select>
             </form>
@@ -51,7 +52,7 @@
         <div class="filtres__tri colonnes colonne">
             <div class="colonne">
             </div>
-            <form id="ordre" class="js-ordre-form filtres_taxonomie__formats filtre colonne">
+            <form id="ordre" class="js-filter-form filtres_taxonomie__formats filtre colonne">
                 <label for="select-ordre">Trier par</label>
                 <select id="select-ordre" name="ordre">
                     <option class="js-ordre-item" value="DESC">Nouveautés</option>
@@ -59,6 +60,7 @@
                 </select>
             </form>
         </div>
+
     </div>
 
     <div class="galerie__photos colonnes">

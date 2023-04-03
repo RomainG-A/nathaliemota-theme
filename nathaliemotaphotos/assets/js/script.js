@@ -76,70 +76,51 @@ function navigationPhotos(fleche, image) {
 
 
 let pageActuelle = 1;
-let filtreTaxonomie = '';
-let filtreOrdre = '';
 
 $('#btn-charger-plus').on('click', function() {
     pageActuelle ++;
+    ajaxRequest(true);
+});
+$(document).on('change', '.js-filter-form', function(e) {
+    e.preventDefault();
+    pageActuelle = 1;
+    ajaxRequest(false);
+});
+
+function ajaxRequest(chargerPlus) {
+    var categorie = $('#categories');
+    var categorieTaxonomie = categorie.attr('id');
+    var categorieSelection = categorie.find('option:selected').val();
+    var format = $('#format');
+    var formatTaxonomie = format.attr('id');
+    var formatSelection = format.find('option:selected').val();
+    var ordre = $('#ordre').find('option:selected').val();
     $.ajax({
         type: 'POST',
         url: '/wp-admin/admin-ajax.php',
         dataType: 'html',
         data: {
-          action: 'load_more',
-          paged: pageActuelle,
+            action: 'filter',
+            categorieTaxonomie: categorieTaxonomie,
+            categorieSelection: categorieSelection,
+            formatTaxonomie: formatTaxonomie,
+            formatSelection: formatSelection,
+            orderDirection: ordre,
+            page: pageActuelle
         },
-        success: function (result) {
-            $('.galerie__photos').append(result);
+        success: function(resultat) {
+            if (chargerPlus) {
+                $('.galerie__photos').append(resultat);
+            }
+            else {
+                $('.galerie__photos').html(resultat);
+            }
+        },
+        error: function(result) {
+            console.warn(result);
         }
     });
-});
-
-$(document).on('change', '.js-filter-form', function(e) {
-    e.preventDefault();
-    var choix = $(this).attr('id');
-    var selection = $(this).find('option:selected').val();
-    var toutesCategories = false;
-    if (choix == 'categories' && selection == 'all') {
-        toutesCategories = true;
-    }
-    $.ajax({
-        type: 'POST',
-        url: '/wp-admin/admin-ajax.php',
-        data: {
-            action: 'filter',
-            nomTaxonomie: choix,
-            slugTaxonomie: selection,
-            toutesCategories: toutesCategories
-        },
-        success: function(result) {
-            $('.galerie__photos').html(result);
-        },
-        /* error: function(result) {
-            console.warn(result);
-        } */
-    });
-});
-
-$(document).on('change', '.js-ordre-form', function(e) {
-    //e.preventDefault();
-    var ordre = $(this).find('option:selected').val();
-    
-    $.ajax({
-        type: 'POST',
-        url: '/wp-admin/admin-ajax.php',
-        data: {
-            action: 'order',
-            orderDirection: ordre
-        },
-        success: function(result) {
-            $('.galerie__photos').html(result);
-        },
-        /* error: function(result) {
-            console.warn(result);
-        } */
-    });
-});
+}
 
 
 
