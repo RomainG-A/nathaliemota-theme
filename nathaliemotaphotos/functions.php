@@ -35,7 +35,7 @@ function afficherTaxonomies($nomTaxonomie) {
 
 
 function filter() {
-    $ajaxposts = new WP_Query(array(
+    $requeteAjax = new WP_Query(array(
         'post_type' => 'photos',
         'orderby' => 'date',
         'order' => $_POST['orderDirection'],
@@ -61,7 +61,7 @@ function filter() {
             )
         )
     );
-    afficherImages($ajaxposts, true);
+    afficherImages($requeteAjax, true);
 }
 add_action('wp_ajax_nopriv_filter', 'filter');
 add_action('wp_ajax_filter', 'filter');
